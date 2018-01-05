@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // fApp
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(988, 538);
+            this.Name = "fApp";
             this.Text = "fApp";
+            this.Load += new System.EventHandler(this.fApp_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
