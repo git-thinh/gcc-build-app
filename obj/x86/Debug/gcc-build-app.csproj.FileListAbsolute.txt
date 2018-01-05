@@ -1,0 +1,6 @@
+C:\C++\gcc-build-app\bin\Debug\gcc-build-app.exe
+C:\C++\gcc-build-app\bin\Debug\gcc-build-app.pdb
+C:\C++\gcc-build-app\obj\x86\Debug\gcc_build_app.Properties.Resources.resources
+C:\C++\gcc-build-app\obj\x86\Debug\gcc-build-app.csproj.GenerateResource.Cache
+C:\C++\gcc-build-app\obj\x86\Debug\gcc-build-app.exe
+C:\C++\gcc-build-app\obj\x86\Debug\gcc-build-app.pdb
