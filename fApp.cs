@@ -10,12 +10,17 @@ namespace gcc_build_app
 {
     public partial class fApp : Form
     {
+        void _init() {
+            tab_makefile_init();
+        }
+
         #region [ === MAIN ==== ]
 
         public fApp()
         {
             InitializeComponent();
             app_init();
+            _init();
         }
 
         private void fApp_Load(object sender, EventArgs e)
@@ -32,5 +37,12 @@ namespace gcc_build_app
 
         #endregion
 
+        #region [ === TAB: Makefile === ]
+
+        void tab_makefile_init(){
+            makefile_Select_FileType.SelectedIndex = 0;
+        }
+
+        #endregion
     }
 }
