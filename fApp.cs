@@ -5,13 +5,19 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+using System.Linq.Dynamic;
+
 
 namespace gcc_build_app
 {
     public partial class fApp : Form
     {
+        string m_gcc_PathEnvironment = "";
+
         void _init() {
-            tab_makefile_init();
+            gcc_init();
+            makefile_init();
         }
 
         #region [ === MAIN ==== ]
@@ -37,9 +43,22 @@ namespace gcc_build_app
 
         #endregion
 
+        #region [ === TAB: GCC === ]
+
+        void gcc_init(){
+            m_gcc_PathEnvironment = Environment.GetEnvironmentVariable("path").Split(';')
+                .Where(x => x.ToLower().Contains("mingw"))
+                .Take(1)
+                .SingleOrDefault();
+            gcc_Label_Path.Text = m_gcc_PathEnvironment;
+            
+        }
+
+        #endregion
+
         #region [ === TAB: Makefile === ]
 
-        void tab_makefile_init(){
+        void makefile_init(){
             makefile_Select_FileType.SelectedIndex = 0;
         }
 
