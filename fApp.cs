@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq;
 using System.Linq.Dynamic;
+using System.IO;
 
 
 namespace gcc_build_app
@@ -104,6 +105,25 @@ namespace gcc_build_app
         private void tool_Button_CreateMakeFile_Click(object sender, EventArgs e)
         {
             tabMain.SelectedTab = tabMakefile;
+        }
+
+        #endregion
+
+        #region [ === TAB: Project === ]
+
+        private void prj_option_Button_Select_Click(object sender, EventArgs e)
+        {
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    string[] files = Directory.GetFiles(fbd.SelectedPath);
+
+                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+                }
+            }
         }
 
         #endregion

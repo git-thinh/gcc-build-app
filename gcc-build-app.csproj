@@ -143,6 +143,8 @@
     <Compile Include="LIB\LINQ\Tuple\IStructuralEquatable.cs" />
     <Compile Include="LIB\LINQ\Tuple\Tuple.cs" />
     <Compile Include="LIB\LINQ\_demo.cs" />
+    <Compile Include="MODEL\oBookMark.cs" />
+    <Compile Include="MODEL\oApp.cs" />
     <Compile Include="MODEL\oLib.cs" />
     <Compile Include="MODEL\oGCC.cs" />
     <Compile Include="MODEL\oInclude.cs" />

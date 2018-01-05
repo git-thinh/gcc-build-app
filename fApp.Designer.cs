@@ -81,7 +81,12 @@
             this.tabModule = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabModuleGeneral = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.module_ListCheck_Modules = new System.Windows.Forms.CheckedListBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.module_Type_Select = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.GroupBox();
             this.module_Item_Status_Checkbox = new System.Windows.Forms.CheckBox();
@@ -100,6 +105,21 @@
             this.module_Button_RemoveModule = new System.Windows.Forms.Button();
             this.module_Button_UpdateModule = new System.Windows.Forms.Button();
             this.tabProjectOption = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.prj_option_FileItem_Setting_Text = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.prj_option_FileItem_Name_Text = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.prj_option_ProjectItem_Setting_Text = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.prj_option_ProjectItem_Name_Text = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.prj_option_ListFiles = new System.Windows.Forms.ListBox();
             this.prj_option_ListCheck_Projects = new System.Windows.Forms.CheckedListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.prj_option_Button_Select = new System.Windows.Forms.Button();
@@ -114,26 +134,8 @@
             this.compile_LOG_TextBox = new System.Windows.Forms.TextBox();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.prj_option_ProjectItem_Setting_Text = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.prj_option_ProjectItem_Name_Text = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.prj_option_ListFiles = new System.Windows.Forms.ListBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.prj_option_FileItem_Setting_Text = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.prj_option_FileItem_Name_Text = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.module_Type_Select = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.mnMain.SuspendLayout();
             this.toolBarMain.SuspendLayout();
             this.tabCategory.SuspendLayout();
@@ -149,23 +151,23 @@
             this.tabModule.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabModuleGeneral.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabModuleConfig.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabProjectOption.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tabMakefile.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabCompileLOG.SuspendLayout();
             this.statusBar.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnMain
@@ -205,11 +207,10 @@
             // tool_Button_CreateMakeFile
             // 
             this.tool_Button_CreateMakeFile.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tool_Button_CreateMakeFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tool_Button_CreateMakeFile.Image = ((System.Drawing.Image)(resources.GetObject("tool_Button_CreateMakeFile.Image")));
             this.tool_Button_CreateMakeFile.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tool_Button_CreateMakeFile.Name = "tool_Button_CreateMakeFile";
-            this.tool_Button_CreateMakeFile.Size = new System.Drawing.Size(93, 22);
+            this.tool_Button_CreateMakeFile.Size = new System.Drawing.Size(109, 22);
             this.tool_Button_CreateMakeFile.Text = "Create Makefile";
             this.tool_Button_CreateMakeFile.Click += new System.EventHandler(this.tool_Button_CreateMakeFile_Click);
             // 
@@ -223,7 +224,7 @@
             this.tabCategory.Location = new System.Drawing.Point(0, 49);
             this.tabCategory.Name = "tabCategory";
             this.tabCategory.SelectedIndex = 0;
-            this.tabCategory.Size = new System.Drawing.Size(200, 512);
+            this.tabCategory.Size = new System.Drawing.Size(200, 427);
             this.tabCategory.TabIndex = 2;
             // 
             // tabProject
@@ -233,7 +234,7 @@
             this.tabProject.Location = new System.Drawing.Point(4, 22);
             this.tabProject.Name = "tabProject";
             this.tabProject.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProject.Size = new System.Drawing.Size(192, 486);
+            this.tabProject.Size = new System.Drawing.Size(192, 401);
             this.tabProject.TabIndex = 0;
             this.tabProject.Text = "Project";
             this.tabProject.UseVisualStyleBackColor = true;
@@ -244,7 +245,7 @@
             this.treeProject.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeProject.Location = new System.Drawing.Point(3, 28);
             this.treeProject.Name = "treeProject";
-            this.treeProject.Size = new System.Drawing.Size(186, 455);
+            this.treeProject.Size = new System.Drawing.Size(186, 370);
             this.treeProject.TabIndex = 1;
             // 
             // toolBarProject
@@ -359,7 +360,7 @@
             this.splitterCenter.MinExtra = 0;
             this.splitterCenter.MinSize = 0;
             this.splitterCenter.Name = "splitterCenter";
-            this.splitterCenter.Size = new System.Drawing.Size(5, 512);
+            this.splitterCenter.Size = new System.Drawing.Size(5, 427);
             this.splitterCenter.TabIndex = 3;
             this.splitterCenter.TabStop = false;
             // 
@@ -374,7 +375,7 @@
             this.tabMain.Location = new System.Drawing.Point(200, 49);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(749, 512);
+            this.tabMain.Size = new System.Drawing.Size(749, 427);
             this.tabMain.TabIndex = 4;
             // 
             // tabGCC
@@ -688,7 +689,7 @@
             this.tabModule.Location = new System.Drawing.Point(4, 22);
             this.tabModule.Name = "tabModule";
             this.tabModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModule.Size = new System.Drawing.Size(741, 486);
+            this.tabModule.Size = new System.Drawing.Size(741, 401);
             this.tabModule.TabIndex = 0;
             this.tabModule.Text = "Module";
             this.tabModule.UseVisualStyleBackColor = true;
@@ -702,7 +703,7 @@
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(735, 449);
+            this.tabControl2.Size = new System.Drawing.Size(735, 364);
             this.tabControl2.TabIndex = 0;
             // 
             // tabModuleGeneral
@@ -712,10 +713,20 @@
             this.tabModuleGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabModuleGeneral.Name = "tabModuleGeneral";
             this.tabModuleGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModuleGeneral.Size = new System.Drawing.Size(727, 423);
+            this.tabModuleGeneral.Size = new System.Drawing.Size(727, 338);
             this.tabModuleGeneral.TabIndex = 0;
             this.tabModuleGeneral.Text = "General";
             this.tabModuleGeneral.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.module_ListCheck_Modules);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 177);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(721, 158);
+            this.panel6.TabIndex = 4;
             // 
             // module_ListCheck_Modules
             // 
@@ -723,8 +734,54 @@
             this.module_ListCheck_Modules.FormattingEnabled = true;
             this.module_ListCheck_Modules.Location = new System.Drawing.Point(0, 24);
             this.module_ListCheck_Modules.Name = "module_ListCheck_Modules";
-            this.module_ListCheck_Modules.Size = new System.Drawing.Size(721, 219);
+            this.module_ListCheck_Modules.Size = new System.Drawing.Size(721, 134);
             this.module_ListCheck_Modules.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.module_Type_Select);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(721, 24);
+            this.panel7.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "List Module:";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(585, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Type:";
+            // 
+            // module_Type_Select
+            // 
+            this.module_Type_Select.Dock = System.Windows.Forms.DockStyle.Right;
+            this.module_Type_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.module_Type_Select.FormattingEnabled = true;
+            this.module_Type_Select.Items.AddRange(new object[] {
+            "ALL",
+            "DLL_STATIC",
+            "DLL_DYNAMIC",
+            "LIB",
+            "FILE_HEADER"});
+            this.module_Type_Select.Location = new System.Drawing.Point(623, 0);
+            this.module_Type_Select.Name = "module_Type_Select";
+            this.module_Type_Select.Size = new System.Drawing.Size(98, 21);
+            this.module_Type_Select.TabIndex = 0;
             // 
             // panel2
             // 
@@ -738,6 +795,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.checkBox4);
             this.panel4.Controls.Add(this.module_Item_Status_Checkbox);
             this.panel4.Controls.Add(this.module_Item_Setting_Text);
             this.panel4.Controls.Add(this.label6);
@@ -756,7 +814,7 @@
             // 
             this.module_Item_Status_Checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.module_Item_Status_Checkbox.AutoSize = true;
-            this.module_Item_Status_Checkbox.Location = new System.Drawing.Point(403, 19);
+            this.module_Item_Status_Checkbox.Location = new System.Drawing.Point(401, 19);
             this.module_Item_Status_Checkbox.Name = "module_Item_Status_Checkbox";
             this.module_Item_Status_Checkbox.Size = new System.Drawing.Size(53, 17);
             this.module_Item_Status_Checkbox.TabIndex = 5;
@@ -791,7 +849,7 @@
             this.module_Item_Name_Text.Location = new System.Drawing.Point(47, 17);
             this.module_Item_Name_Text.Name = "module_Item_Name_Text";
             this.module_Item_Name_Text.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.module_Item_Name_Text.Size = new System.Drawing.Size(350, 20);
+            this.module_Item_Name_Text.Size = new System.Drawing.Size(289, 20);
             this.module_Item_Name_Text.TabIndex = 3;
             // 
             // label7
@@ -856,7 +914,7 @@
             this.panel1.Controls.Add(this.module_Button_RemoveModule);
             this.panel1.Controls.Add(this.module_Button_UpdateModule);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 452);
+            this.panel1.Location = new System.Drawing.Point(3, 367);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(735, 31);
             this.panel1.TabIndex = 1;
@@ -929,6 +987,172 @@
             this.tabProjectOption.Text = "Project Option";
             this.tabProjectOption.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.groupBox4);
+            this.panel5.Controls.Add(this.groupBox2);
+            this.panel5.Controls.Add(this.groupBox3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(735, 340);
+            this.panel5.TabIndex = 9;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.prj_option_FileItem_Name_Text);
+            this.groupBox4.Controls.Add(this.checkBox5);
+            this.groupBox4.Controls.Add(this.checkBox3);
+            this.groupBox4.Controls.Add(this.prj_option_FileItem_Setting_Text);
+            this.groupBox4.Controls.Add(this.label10);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(0, 129);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(476, 211);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "File";
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(416, 19);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox3.Size = new System.Drawing.Size(53, 17);
+            this.checkBox3.TabIndex = 5;
+            this.checkBox3.Text = "Using";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // prj_option_FileItem_Setting_Text
+            // 
+            this.prj_option_FileItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prj_option_FileItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
+            this.prj_option_FileItem_Setting_Text.Multiline = true;
+            this.prj_option_FileItem_Setting_Text.Name = "prj_option_FileItem_Setting_Text";
+            this.prj_option_FileItem_Setting_Text.Size = new System.Drawing.Size(423, 164);
+            this.prj_option_FileItem_Setting_Text.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Name";
+            // 
+            // prj_option_FileItem_Name_Text
+            // 
+            this.prj_option_FileItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prj_option_FileItem_Name_Text.Location = new System.Drawing.Point(47, 17);
+            this.prj_option_FileItem_Name_Text.Name = "prj_option_FileItem_Name_Text";
+            this.prj_option_FileItem_Name_Text.Size = new System.Drawing.Size(314, 20);
+            this.prj_option_FileItem_Name_Text.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Settings";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.checkBox2);
+            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Setting_Text);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Name_Text);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(476, 129);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Project";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(414, 19);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox2.Size = new System.Drawing.Size(53, 17);
+            this.checkBox2.TabIndex = 5;
+            this.checkBox2.Text = "Using";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // prj_option_ProjectItem_Setting_Text
+            // 
+            this.prj_option_ProjectItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prj_option_ProjectItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
+            this.prj_option_ProjectItem_Setting_Text.Multiline = true;
+            this.prj_option_ProjectItem_Setting_Text.Name = "prj_option_ProjectItem_Setting_Text";
+            this.prj_option_ProjectItem_Setting_Text.Size = new System.Drawing.Size(423, 82);
+            this.prj_option_ProjectItem_Setting_Text.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Name";
+            // 
+            // prj_option_ProjectItem_Name_Text
+            // 
+            this.prj_option_ProjectItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.prj_option_ProjectItem_Name_Text.Location = new System.Drawing.Point(47, 17);
+            this.prj_option_ProjectItem_Name_Text.Name = "prj_option_ProjectItem_Name_Text";
+            this.prj_option_ProjectItem_Name_Text.Size = new System.Drawing.Size(364, 20);
+            this.prj_option_ProjectItem_Name_Text.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Settings";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.prj_option_ListFiles);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox3.Location = new System.Drawing.Point(476, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(259, 340);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Files";
+            // 
+            // prj_option_ListFiles
+            // 
+            this.prj_option_ListFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prj_option_ListFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.prj_option_ListFiles.FormattingEnabled = true;
+            this.prj_option_ListFiles.Location = new System.Drawing.Point(3, 16);
+            this.prj_option_ListFiles.Name = "prj_option_ListFiles";
+            this.prj_option_ListFiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.prj_option_ListFiles.ScrollAlwaysVisible = true;
+            this.prj_option_ListFiles.Size = new System.Drawing.Size(253, 321);
+            this.prj_option_ListFiles.TabIndex = 0;
+            // 
             // prj_option_ListCheck_Projects
             // 
             this.prj_option_ListCheck_Projects.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -958,6 +1182,7 @@
             this.prj_option_Button_Select.TabIndex = 2;
             this.prj_option_Button_Select.Text = "Select";
             this.prj_option_Button_Select.UseVisualStyleBackColor = true;
+            this.prj_option_Button_Select.Click += new System.EventHandler(this.prj_option_Button_Select_Click);
             // 
             // prj_option_Button_Remove
             // 
@@ -1060,7 +1285,7 @@
             // 
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusBar.Location = new System.Drawing.Point(0, 561);
+            this.statusBar.Location = new System.Drawing.Point(0, 476);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(949, 22);
             this.statusBar.TabIndex = 5;
@@ -1072,230 +1297,34 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // groupBox2
+            // checkBox4
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Setting_Text);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Name_Text);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 129);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Project";
+            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(340, 19);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(57, 17);
+            this.checkBox4.TabIndex = 6;
+            this.checkBox4.Text = "Cache";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBox5
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(417, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(53, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Using";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // prj_option_ProjectItem_Setting_Text
-            // 
-            this.prj_option_ProjectItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_ProjectItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
-            this.prj_option_ProjectItem_Setting_Text.Multiline = true;
-            this.prj_option_ProjectItem_Setting_Text.Name = "prj_option_ProjectItem_Setting_Text";
-            this.prj_option_ProjectItem_Setting_Text.Size = new System.Drawing.Size(423, 82);
-            this.prj_option_ProjectItem_Setting_Text.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Name";
-            // 
-            // prj_option_ProjectItem_Name_Text
-            // 
-            this.prj_option_ProjectItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_ProjectItem_Name_Text.Location = new System.Drawing.Point(47, 17);
-            this.prj_option_ProjectItem_Name_Text.Name = "prj_option_ProjectItem_Name_Text";
-            this.prj_option_ProjectItem_Name_Text.Size = new System.Drawing.Size(364, 20);
-            this.prj_option_ProjectItem_Name_Text.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Settings";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.prj_option_ListFiles);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Location = new System.Drawing.Point(476, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(259, 340);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Files";
-            // 
-            // prj_option_ListFiles
-            // 
-            this.prj_option_ListFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.prj_option_ListFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.prj_option_ListFiles.FormattingEnabled = true;
-            this.prj_option_ListFiles.Location = new System.Drawing.Point(3, 16);
-            this.prj_option_ListFiles.Name = "prj_option_ListFiles";
-            this.prj_option_ListFiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.prj_option_ListFiles.ScrollAlwaysVisible = true;
-            this.prj_option_ListFiles.Size = new System.Drawing.Size(253, 321);
-            this.prj_option_ListFiles.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.groupBox4);
-            this.panel5.Controls.Add(this.groupBox2);
-            this.panel5.Controls.Add(this.groupBox3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(735, 340);
-            this.panel5.TabIndex = 9;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.checkBox3);
-            this.groupBox4.Controls.Add(this.prj_option_FileItem_Setting_Text);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.prj_option_FileItem_Name_Text);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 129);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(476, 211);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "File";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(417, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(53, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Using";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // prj_option_FileItem_Setting_Text
-            // 
-            this.prj_option_FileItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_FileItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
-            this.prj_option_FileItem_Setting_Text.Multiline = true;
-            this.prj_option_FileItem_Setting_Text.Name = "prj_option_FileItem_Setting_Text";
-            this.prj_option_FileItem_Setting_Text.Size = new System.Drawing.Size(423, 164);
-            this.prj_option_FileItem_Setting_Text.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Name";
-            // 
-            // prj_option_FileItem_Name_Text
-            // 
-            this.prj_option_FileItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_FileItem_Name_Text.Location = new System.Drawing.Point(47, 17);
-            this.prj_option_FileItem_Name_Text.Name = "prj_option_FileItem_Name_Text";
-            this.prj_option_FileItem_Name_Text.Size = new System.Drawing.Size(364, 20);
-            this.prj_option_FileItem_Name_Text.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Settings";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.module_ListCheck_Modules);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 177);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(721, 243);
-            this.panel6.TabIndex = 4;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label13);
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.module_Type_Select);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(721, 24);
-            this.panel7.TabIndex = 3;
-            // 
-            // module_Type_Select
-            // 
-            this.module_Type_Select.Dock = System.Windows.Forms.DockStyle.Right;
-            this.module_Type_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.module_Type_Select.FormattingEnabled = true;
-            this.module_Type_Select.Items.AddRange(new object[] {
-            "ALL",
-            "DLL_STATIC",
-            "DLL_DYNAMIC",
-            "LIB",
-            "FILE_HEADER"});
-            this.module_Type_Select.Location = new System.Drawing.Point(623, 0);
-            this.module_Type_Select.Name = "module_Type_Select";
-            this.module_Type_Select.Size = new System.Drawing.Size(98, 21);
-            this.module_Type_Select.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(585, 5);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Type:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 5);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "List Module:";
+            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(360, 19);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox5.Size = new System.Drawing.Size(57, 17);
+            this.checkBox5.TabIndex = 6;
+            this.checkBox5.Text = "Cache";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // fApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 583);
+            this.ClientSize = new System.Drawing.Size(949, 498);
             this.Controls.Add(this.splitterCenter);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.tabCategory);
@@ -1330,6 +1359,9 @@
             this.tabModule.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabModuleGeneral.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -1338,6 +1370,12 @@
             this.tabModuleConfig.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tabProjectOption.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tabMakefile.ResumeLayout(false);
             this.tabMakefile.PerformLayout();
@@ -1347,15 +1385,6 @@
             this.tabCompileLOG.PerformLayout();
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1468,5 +1497,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox module_Type_Select;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox5;
     }
 }
