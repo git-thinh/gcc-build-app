@@ -18,6 +18,7 @@ namespace gcc_build_app
         void _init() {
             gcc_init();
             makefile_init();
+            module_init();
         }
 
         #region [ === MAIN ==== ]
@@ -60,6 +61,49 @@ namespace gcc_build_app
 
         void makefile_init(){
             makefile_Select_FileType.SelectedIndex = 0;
+        }
+
+        #endregion
+
+        #region [ === TAB: Module === ]
+
+        void module_init() 
+        {
+            module_Type_Select.SelectedIndex = 0;
+        }
+
+        private void module_Button_CloneMakefile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void module_Button_CreateNewMakefile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void module_Button_SelectModule_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void module_Button_UpdateModule_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void module_Button_RemoveModule_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region [ ==== ToolBarMain === ]
+
+        private void tool_Button_CreateMakeFile_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedTab = tabMakefile;
         }
 
         #endregion
