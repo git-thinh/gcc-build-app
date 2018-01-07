@@ -23,6 +23,19 @@ namespace gcc_build_app
             Application.Run(new fApp());
         }
 
+        public static bool define_Update(string def_old, string def_new)
+        {
+            return _app.update_Define(def_old, def_new);
+        }
+        public static bool define_Remove(string def)
+        {
+            return _app.remove_Define(def);
+        }
+        public static bool define_Add(string def)
+        {
+            return _app.add_Define(def);
+        }
+
         public static void gcc_Update(oGCC gcc)
         {
             switch (_app.GCCs.Count)
@@ -48,13 +61,28 @@ namespace gcc_build_app
 
         public static void WriteFile()
         {
-            using (Stream file = new FileStream(_file, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write))
+            if (!File.Exists(_file))
+                using (Stream ms = new FileStream(_file, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write))
+                    Serializer.Serialize(ms, _app);
+            else
             {
-                Serializer.Serialize(file, _app);
-                file.Close();
+                using (Stream ms = new FileStream(_file, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write))
+                {
+                    Serializer.Serialize(ms, _app);
+                    if (ms.Position < ms.Length) ms.SetLength(ms.Position); 
+                    ms.Close();
+                }
             }
+        }
 
-            Console.WriteLine("{0}: {1} bytes", Path.GetFileName(_file), new FileInfo(_file).Length);
+        public static List<string> get_DefineDefault()
+        {
+            oApp app = null;
+            if (!File.Exists(_file)) return null; 
+
+            using (Stream file = File.OpenRead(_file)) 
+                app = Serializer.Deserialize<oApp>(file);
+            return app.Defines;
         }
 
         private static void ReadFile()

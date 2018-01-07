@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MsgPack">
+      <HintPath>.\MsgPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -259,6 +263,7 @@
   <ItemGroup>
     <Content Include="LIB\LINQ\mono-2.8.1\corlib\System.Diagnostics\Crap.txt" />
     <Content Include="LIB\ProtoBuf\_ReadMe.txt" />
+    <EmbeddedResource Include="MsgPack.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LIB\LINQ\mono-2.8.1\NewFolder\" />

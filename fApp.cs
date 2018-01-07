@@ -20,6 +20,7 @@ namespace gcc_build_app
         {
             gcc_init();
             makefile_init();
+            define_BindUI();
             module_init();
         }
 
@@ -49,26 +50,43 @@ namespace gcc_build_app
 
         #region [ === TAB: Define === ]
 
+        void define_BindUI()
+        {
+            define_Name_Text.Text = "";
+            var dfs = App.GetData().Defines;
+            tabDefine.Tag = dfs;
+            define_ListItem.Items.Clear();
+            foreach (string fi in dfs)
+                define_ListItem.Items.Add(fi, false);
+        }
+
         private void define_Button_Add_Click(object sender, EventArgs e)
         {
-
+            if (App.define_Add(define_Name_Text.Text.Trim()))
+                define_BindUI();
         }
 
         private void define_Button_Remove_Click(object sender, EventArgs e)
         {
-
+            if (App.define_Remove(define_Name_Text.Text.Trim()))
+                define_BindUI();
         }
 
         private void define_Button_SAVE_Click(object sender, EventArgs e)
         {
-
+            App.WriteFile();
         }
 
         private void define_Button_Cancel_Click(object sender, EventArgs e)
         {
+            //App.GetData().Defines = App.get_DefineDefault();
 
         }
-        
+        private void define_ListItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            define_Name_Text.Text = define_ListItem.SelectedItem.ToString();
+        }
+
         #endregion
 
         #region [ === TAB: GCC === ]
@@ -183,7 +201,7 @@ namespace gcc_build_app
         {
 
         }
-        
+
         private void gcc_Libraries_Add_Button_Click(object sender, EventArgs e)
         {
             using (var fbd = new FolderBrowserDialog())
@@ -352,6 +370,7 @@ namespace gcc_build_app
         }
 
         #endregion
+
 
 
 

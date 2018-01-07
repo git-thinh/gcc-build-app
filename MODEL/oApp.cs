@@ -13,21 +13,35 @@ namespace gcc_build_app
         public List<string> Defines { get { return _defines; } }
 
         private List<string> _defines = new List<string>();
-        public void update_Define(string def_old, string def_new)
+        public bool update_Define(string def_old, string def_new)
         {
             int index = _defines.FindIndex(x => x == def_old);
-            if (index > 0 && _defines.FindIndex(x=>x == def_new) == -1)
+            if (index >= 0 && _defines.FindIndex(x => x == def_new) == -1)
+            {
                 _defines[index] = def_new;
+                return true;
+            }
+            return false;
         }
-        public void remove_Define(string def)
+        public bool remove_Define(string def)
         {
             int index = _defines.FindIndex(x => x == def);
-            if (index > 0) _defines.RemoveAt(index);
+            if (index >= 0)
+            {
+                _defines.RemoveAt(index);
+                return true;
+            }
+            return false;
         }
-        public void add_Define(string def)
+        public bool add_Define(string def)
         {
             int index = _defines.FindIndex(x => x == def);
-            if (index == -1) _defines.Insert(0, def);
+            if (index == -1)
+            {
+                _defines.Insert(0, def);
+                return true;
+            }
+            return false;
         }
         /*============================================================*/
         [ProtoMember(2)]
