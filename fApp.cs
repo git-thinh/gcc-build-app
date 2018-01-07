@@ -39,11 +39,36 @@ namespace gcc_build_app
 
         void app_init()
         {
+            this.Top = 44;
             this.Text = _CONST.APP_NAME;
             this.Width = _CONST.APP_WIDTH;
             this.Height = _CONST.APP_HEIGHT;
         }
 
+        #endregion
+
+        #region [ === TAB: Define === ]
+
+        private void define_Button_Add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void define_Button_Remove_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void define_Button_SAVE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void define_Button_Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
+        
         #endregion
 
         #region [ === TAB: GCC === ]
@@ -90,6 +115,7 @@ namespace gcc_build_app
 
         void gcc_BindUI(oGCC gcc)
         {
+            tabGCC.Tag = gcc;
             m_gcc_PathEnvironment = gcc.PathRoot;
             gcc_Label_Path.Text = gcc.PathRoot;
             gcc_Select_List.Text = gcc.Name;
@@ -254,7 +280,6 @@ namespace gcc_build_app
         private void gcc_Cancel_Button_Click(object sender, EventArgs e)
         {
             oGCC gcc = gcc_LoadDefault();
-            tabGCC.Tag = gcc;
             gcc_BindUI(gcc);
             App.gcc_Update(gcc);
         }
@@ -327,6 +352,7 @@ namespace gcc_build_app
         }
 
         #endregion
+
 
 
 

@@ -32,14 +32,35 @@ namespace gcc_build_app
         public string PathRoot { set; get; }
 
         [ProtoMember(8)]
-        public string Option_Compiler { set; get; }
+        public bool Option_Wall { set; get; }
 
         [ProtoMember(9)]
+        public bool Option_G3 { set; get; }
+
+        [ProtoMember(10)]
+        public bool Option_0O { set; get; }
+
+        [ProtoMember(11)]
+        public bool Option_is64bit { set; get; }
+
+        [ProtoMember(12)]
+        public string Option_Define { set; get; }
+
+        [ProtoMember(13)]
+        public string Option_Compiler { set; get; }
+
+        [ProtoMember(14)]
         public string Option_Linker { set; get; }
 
         public oGCC() { }
         public oGCC(string pathRoot)
         {
+            Option_is64bit = false;
+            Option_0O = false;
+            Option_G3 = false;
+            Option_Wall = false;
+            Option_Compiler = "";
+
             PathRoot = pathRoot;
             Version = "";
             Binaries = new List<string>() { _CONST.GCC_PATH_ROOT + @"\bin", _CONST.GCC_PATH_ROOT + @"\x86_64-w64-mingw32\bin" };

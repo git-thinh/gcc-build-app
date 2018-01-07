@@ -10,6 +10,27 @@ namespace gcc_build_app
     public class oApp
     {
         [ProtoMember(1)]
+        public List<string> Defines { get { return _defines; } }
+
+        private List<string> _defines = new List<string>();
+        public void update_Define(string def_old, string def_new)
+        {
+            int index = _defines.FindIndex(x => x == def_old);
+            if (index > 0 && _defines.FindIndex(x=>x == def_new) == -1)
+                _defines[index] = def_new;
+        }
+        public void remove_Define(string def)
+        {
+            int index = _defines.FindIndex(x => x == def);
+            if (index > 0) _defines.RemoveAt(index);
+        }
+        public void add_Define(string def)
+        {
+            int index = _defines.FindIndex(x => x == def);
+            if (index == -1) _defines.Insert(0, def);
+        }
+        /*============================================================*/
+        [ProtoMember(2)]
         public List<oProject> Projects { get { return _projects; } }
 
         private List<oProject> _projects = new List<oProject>();
@@ -22,7 +43,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(2)]
+        [ProtoMember(3)]
         public List<oModule> Modules { get { return _modules; } }
 
         private List<oModule> _modules = new List<oModule>();
@@ -35,7 +56,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(3)]
+        [ProtoMember(4)]
         public List<oGCC> GCCs { get { return _gccs; } }
 
         private List<oGCC> _gccs = new List<oGCC>();
@@ -48,7 +69,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(4)]
+        [ProtoMember(5)]
         public List<oBookMark> BookMarks { get { return _bookmarks; } }
 
         private List<oBookMark> _bookmarks = new List<oBookMark>();
@@ -61,7 +82,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(5)]
+        [ProtoMember(6)]
         public List<string> Makefiles { get { return _makefiles; } }
 
         private List<string> _makefiles = new List<string>();

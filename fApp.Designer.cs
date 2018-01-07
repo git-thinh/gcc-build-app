@@ -53,9 +53,6 @@
             this.tabGCC = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGCC_General = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.gcc_Text_Option_STD_GNU__11 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.gcc_Check_Option_O0 = new System.Windows.Forms.CheckBox();
@@ -156,6 +153,15 @@
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label14 = new System.Windows.Forms.Label();
+            this.tabDefine = new System.Windows.Forms.TabPage();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.define_Button_Remove = new System.Windows.Forms.Button();
+            this.define_Button_Add = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.define_Button_Cancel = new System.Windows.Forms.Button();
+            this.define_Button_SAVE = new System.Windows.Forms.Button();
+            this.define_Name_Text = new System.Windows.Forms.TextBox();
+            this.define_ListItem = new System.Windows.Forms.CheckedListBox();
             this.mnMain.SuspendLayout();
             this.toolBarMain.SuspendLayout();
             this.tabCategory.SuspendLayout();
@@ -198,6 +204,9 @@
             this.toolStrip1.SuspendLayout();
             this.tabCompileLOG.SuspendLayout();
             this.statusBar.SuspendLayout();
+            this.tabDefine.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // mnMain
@@ -401,6 +410,7 @@
             // 
             // tabMain
             // 
+            this.tabMain.Controls.Add(this.tabDefine);
             this.tabMain.Controls.Add(this.tabGCC);
             this.tabMain.Controls.Add(this.tabModule);
             this.tabMain.Controls.Add(this.tabProjectOption);
@@ -445,9 +455,6 @@
             // 
             // tabGCC_General
             // 
-            this.tabGCC_General.Controls.Add(this.checkBox1);
-            this.tabGCC_General.Controls.Add(this.checkBox7);
-            this.tabGCC_General.Controls.Add(this.checkBox6);
             this.tabGCC_General.Controls.Add(this.gcc_Text_Option_STD_GNU__11);
             this.tabGCC_General.Controls.Add(this.label4);
             this.tabGCC_General.Controls.Add(this.gcc_Check_Option_O0);
@@ -466,44 +473,11 @@
             this.tabGCC_General.Text = "General";
             this.tabGCC_General.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(373, 52);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(41, 17);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "xxx";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Enabled = false;
-            this.checkBox7.Location = new System.Drawing.Point(373, 75);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(41, 17);
-            this.checkBox7.TabIndex = 16;
-            this.checkBox7.Text = "xxx";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Enabled = false;
-            this.checkBox6.Location = new System.Drawing.Point(6, 75);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(41, 17);
-            this.checkBox6.TabIndex = 15;
-            this.checkBox6.Text = "xxx";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
             // gcc_Text_Option_STD_GNU__11
             // 
             this.gcc_Text_Option_STD_GNU__11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Text_Option_STD_GNU__11.Location = new System.Drawing.Point(501, 6);
+            this.gcc_Text_Option_STD_GNU__11.Location = new System.Drawing.Point(499, 6);
             this.gcc_Text_Option_STD_GNU__11.Name = "gcc_Text_Option_STD_GNU__11";
             this.gcc_Text_Option_STD_GNU__11.Size = new System.Drawing.Size(216, 20);
             this.gcc_Text_Option_STD_GNU__11.TabIndex = 13;
@@ -521,7 +495,7 @@
             // gcc_Check_Option_O0
             // 
             this.gcc_Check_Option_O0.AutoSize = true;
-            this.gcc_Check_Option_O0.Location = new System.Drawing.Point(6, 52);
+            this.gcc_Check_Option_O0.Location = new System.Drawing.Point(243, 27);
             this.gcc_Check_Option_O0.Name = "gcc_Check_Option_O0";
             this.gcc_Check_Option_O0.Size = new System.Drawing.Size(85, 17);
             this.gcc_Check_Option_O0.TabIndex = 11;
@@ -531,7 +505,7 @@
             // gcc_Check_Option_Wall
             // 
             this.gcc_Check_Option_Wall.AutoSize = true;
-            this.gcc_Check_Option_Wall.Location = new System.Drawing.Point(6, 29);
+            this.gcc_Check_Option_Wall.Location = new System.Drawing.Point(6, 27);
             this.gcc_Check_Option_Wall.Name = "gcc_Check_Option_Wall";
             this.gcc_Check_Option_Wall.Size = new System.Drawing.Size(156, 17);
             this.gcc_Check_Option_Wall.TabIndex = 10;
@@ -541,7 +515,7 @@
             // gcc_Check_Option_G3
             // 
             this.gcc_Check_Option_G3.AutoSize = true;
-            this.gcc_Check_Option_G3.Location = new System.Drawing.Point(373, 32);
+            this.gcc_Check_Option_G3.Location = new System.Drawing.Point(373, 29);
             this.gcc_Check_Option_G3.Name = "gcc_Check_Option_G3";
             this.gcc_Check_Option_G3.Size = new System.Drawing.Size(201, 17);
             this.gcc_Check_Option_G3.TabIndex = 9;
@@ -561,7 +535,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 95);
+            this.label2.Location = new System.Drawing.Point(3, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(267, 13);
             this.label2.TabIndex = 1;
@@ -582,11 +556,11 @@
             this.gcc_Text_Option_Other_When_Compiler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Text_Option_Other_When_Compiler.Location = new System.Drawing.Point(6, 112);
+            this.gcc_Text_Option_Other_When_Compiler.Location = new System.Drawing.Point(6, 88);
             this.gcc_Text_Option_Other_When_Compiler.Multiline = true;
             this.gcc_Text_Option_Other_When_Compiler.Name = "gcc_Text_Option_Other_When_Compiler";
             this.gcc_Text_Option_Other_When_Compiler.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gcc_Text_Option_Other_When_Compiler.Size = new System.Drawing.Size(709, 15);
+            this.gcc_Text_Option_Other_When_Compiler.Size = new System.Drawing.Size(709, 39);
             this.gcc_Text_Option_Other_When_Compiler.TabIndex = 6;
             // 
             // gcc_Text_Option_Other_When_Linker
@@ -1574,6 +1548,104 @@
             this.label14.Size = new System.Drawing.Size(1, 390);
             this.label14.TabIndex = 6;
             // 
+            // tabDefine
+            // 
+            this.tabDefine.Controls.Add(this.define_ListItem);
+            this.tabDefine.Controls.Add(this.panel14);
+            this.tabDefine.Controls.Add(this.panel15);
+            this.tabDefine.Location = new System.Drawing.Point(4, 22);
+            this.tabDefine.Name = "tabDefine";
+            this.tabDefine.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDefine.Size = new System.Drawing.Size(735, 364);
+            this.tabDefine.TabIndex = 7;
+            this.tabDefine.Text = "Define";
+            this.tabDefine.UseVisualStyleBackColor = true;
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.define_Name_Text);
+            this.panel14.Controls.Add(this.define_Button_Remove);
+            this.panel14.Controls.Add(this.define_Button_Add);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel14.Location = new System.Drawing.Point(3, 3);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(729, 27);
+            this.panel14.TabIndex = 15;
+            // 
+            // define_Button_Remove
+            // 
+            this.define_Button_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.define_Button_Remove.Location = new System.Drawing.Point(651, 1);
+            this.define_Button_Remove.Name = "define_Button_Remove";
+            this.define_Button_Remove.Size = new System.Drawing.Size(75, 23);
+            this.define_Button_Remove.TabIndex = 1;
+            this.define_Button_Remove.Text = "Remove";
+            this.define_Button_Remove.UseVisualStyleBackColor = true;
+            this.define_Button_Remove.Click += new System.EventHandler(this.define_Button_Remove_Click);
+            // 
+            // define_Button_Add
+            // 
+            this.define_Button_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.define_Button_Add.Location = new System.Drawing.Point(570, 2);
+            this.define_Button_Add.Name = "define_Button_Add";
+            this.define_Button_Add.Size = new System.Drawing.Size(75, 23);
+            this.define_Button_Add.TabIndex = 0;
+            this.define_Button_Add.Text = "Add";
+            this.define_Button_Add.UseVisualStyleBackColor = true;
+            this.define_Button_Add.Click += new System.EventHandler(this.define_Button_Add_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.define_Button_Cancel);
+            this.panel15.Controls.Add(this.define_Button_SAVE);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel15.Location = new System.Drawing.Point(3, 337);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(729, 24);
+            this.panel15.TabIndex = 17;
+            // 
+            // define_Button_Cancel
+            // 
+            this.define_Button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.define_Button_Cancel.Location = new System.Drawing.Point(653, 1);
+            this.define_Button_Cancel.Name = "define_Button_Cancel";
+            this.define_Button_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.define_Button_Cancel.TabIndex = 1;
+            this.define_Button_Cancel.Text = "Cancel";
+            this.define_Button_Cancel.UseVisualStyleBackColor = true;
+            this.define_Button_Cancel.Click += new System.EventHandler(this.define_Button_Cancel_Click);
+            // 
+            // define_Button_SAVE
+            // 
+            this.define_Button_SAVE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.define_Button_SAVE.Location = new System.Drawing.Point(575, 1);
+            this.define_Button_SAVE.Name = "define_Button_SAVE";
+            this.define_Button_SAVE.Size = new System.Drawing.Size(75, 23);
+            this.define_Button_SAVE.TabIndex = 0;
+            this.define_Button_SAVE.Text = "SAVE";
+            this.define_Button_SAVE.UseVisualStyleBackColor = true;
+            this.define_Button_SAVE.Click += new System.EventHandler(this.define_Button_SAVE_Click);
+            // 
+            // define_Name_Text
+            // 
+            this.define_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.define_Name_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.define_Name_Text.Location = new System.Drawing.Point(1, 3);
+            this.define_Name_Text.Name = "define_Name_Text";
+            this.define_Name_Text.Size = new System.Drawing.Size(564, 20);
+            this.define_Name_Text.TabIndex = 2;
+            // 
+            // define_ListItem
+            // 
+            this.define_ListItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.define_ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.define_ListItem.FormattingEnabled = true;
+            this.define_ListItem.Location = new System.Drawing.Point(3, 30);
+            this.define_ListItem.Name = "define_ListItem";
+            this.define_ListItem.Size = new System.Drawing.Size(729, 307);
+            this.define_ListItem.TabIndex = 18;
+            // 
             // fApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1650,6 +1722,10 @@
             this.tabCompileLOG.PerformLayout();
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
+            this.tabDefine.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1709,9 +1785,6 @@
         private System.Windows.Forms.CheckBox gcc_Check_Option_Wall;
         private System.Windows.Forms.CheckBox gcc_Check_Option_G3;
         private System.Windows.Forms.CheckBox gcc_Check_Option_32bit_64bit;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabCompileLOG;
         private System.Windows.Forms.TextBox compile_LOG_TextBox;
         private System.Windows.Forms.Button gcc_Button_Remove;
@@ -1784,5 +1857,14 @@
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button gcc_SAVE_Button;
         private System.Windows.Forms.Button gcc_Cancel_Button;
+        private System.Windows.Forms.TabPage tabDefine;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.TextBox define_Name_Text;
+        private System.Windows.Forms.Button define_Button_Remove;
+        private System.Windows.Forms.Button define_Button_Add;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button define_Button_Cancel;
+        private System.Windows.Forms.Button define_Button_SAVE;
+        private System.Windows.Forms.CheckedListBox define_ListItem;
     }
 }
