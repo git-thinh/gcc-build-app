@@ -16,7 +16,8 @@ namespace gcc_build_app
     {
         string m_gcc_PathEnvironment = "";
 
-        void _init() {
+        void _init()
+        {
             gcc_init();
             makefile_init();
             module_init();
@@ -36,7 +37,7 @@ namespace gcc_build_app
 
         }
 
-        void app_init() 
+        void app_init()
         {
             this.Text = _CONST.APP_NAME;
             this.Width = _CONST.APP_WIDTH;
@@ -47,9 +48,10 @@ namespace gcc_build_app
 
         #region [ === TAB: GCC === ]
 
-        void gcc_init(){
+        oGCC gcc_LoadDefault()
+        {
             string path = Environment.GetEnvironmentVariable("path").Split(';')
-                .Select(x=>x.ToLower())
+                .Select(x => x.ToLower())
                 .Where(x => x.Contains("mingw"))
                 .Take(1)
                 .SingleOrDefault();
@@ -57,14 +59,70 @@ namespace gcc_build_app
             {
                 if (path.EndsWith("\\bin"))
                     path = path.Substring(0, path.Length - 4);
-                m_gcc_PathEnvironment = path;
-                gcc_Label_Path.Text = m_gcc_PathEnvironment;
-                oGCC gcc = new oGCC(m_gcc_PathEnvironment);
-                gcc_Binaries_ListItems_Bind(gcc);
-                gcc_Libraries_ListItems_Bind(gcc);
-                gcc_CppIncludes_ListItems_Bind(gcc);
-                gcc_CIncludes_ListItems_Bind(gcc); 
+                return new oGCC(path);
             }
+            return null;
+        }
+
+        void gcc_init()
+        {
+            oGCC gcc = null;
+            if (App.GetData().GCCs.Count > 0)
+                gcc = App.GetData().GCCs[0];
+            else
+            {
+                string path = Environment.GetEnvironmentVariable("path").Split(';')
+                    .Select(x => x.ToLower())
+                    .Where(x => x.Contains("mingw"))
+                    .Take(1)
+                    .SingleOrDefault();
+                if (!string.IsNullOrEmpty(path))
+                {
+                    if (path.EndsWith("\\bin"))
+                        path = path.Substring(0, path.Length - 4);
+                    gcc = gcc_LoadDefault();
+                }
+            }
+
+            if (gcc != null)
+                gcc_BindUI(gcc);
+        }
+
+        void gcc_BindUI(oGCC gcc)
+        {
+            m_gcc_PathEnvironment = gcc.PathRoot;
+            gcc_Label_Path.Text = gcc.PathRoot;
+            gcc_Select_List.Text = gcc.Name;
+
+            gcc_Binaries_ListItems_Bind(gcc);
+            gcc_Libraries_ListItems_Bind(gcc);
+            gcc_CppIncludes_ListItems_Bind(gcc);
+            gcc_CIncludes_ListItems_Bind(gcc);
+        }
+
+        void gcc_Binaries_ListItems_Bind(oGCC gcc)
+        {
+            gcc_Binaries_ListItems.DataSource = null;
+            gcc_Binaries_ListItems.DataSource = gcc.Binaries;
+            tabGCC.Tag = gcc;
+        }
+        void gcc_Libraries_ListItems_Bind(oGCC gcc)
+        {
+            gcc_Libraries_ListItem.DataSource = null;
+            gcc_Libraries_ListItem.DataSource = gcc.Libraries;
+            tabGCC.Tag = gcc;
+        }
+        void gcc_CIncludes_ListItems_Bind(oGCC gcc)
+        {
+            gcc_CIncludes_ListItem.DataSource = null;
+            gcc_CIncludes_ListItem.DataSource = gcc.C_Includes;
+            tabGCC.Tag = gcc;
+        }
+        void gcc_CppIncludes_ListItems_Bind(oGCC gcc)
+        {
+            gcc_CppIncludes_ListItem.DataSource = null;
+            gcc_CppIncludes_ListItem.DataSource = gcc.Cpp_Includes;
+            tabGCC.Tag = gcc;
         }
 
         private void gcc_Binaries_Add_Button_Click(object sender, EventArgs e)
@@ -99,42 +157,114 @@ namespace gcc_build_app
         {
 
         }
-
-        private void gcc_Update_Button_Click(object sender, EventArgs e)
+        
+        private void gcc_Libraries_Add_Button_Click(object sender, EventArgs e)
         {
-
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.Libraries.Add(fbd.SelectedPath.ToLower());
+                    gcc_Libraries_ListItems_Bind(gcc);
+                }
+            }
         }
 
-        void gcc_Binaries_ListItems_Bind(oGCC gcc)
+        private void gcc_Libraries_Remove_Button_Click(object sender, EventArgs e)
         {
-            gcc_Binaries_ListItems.DataSource = null;
-            gcc_Binaries_ListItems.DataSource = gcc.Binaries;
-            tabGCC.Tag = gcc;
+            if (gcc_Binaries_ListItems.SelectedItem != null)
+            {
+                string _itemSelect = gcc_Libraries_ListItem.SelectedItem.ToString();
+                if (!string.IsNullOrEmpty(_itemSelect))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.Libraries.Remove(_itemSelect);
+                    gcc_Libraries_ListItems_Bind(gcc);
+                }
+            }
         }
-        void gcc_Libraries_ListItems_Bind(oGCC gcc)
+
+        private void gcc_CIncludes_Add_Button_Click(object sender, EventArgs e)
         {
-            gcc_Libraries_ListItem.DataSource = null;
-            gcc_Libraries_ListItem.DataSource = gcc.Libraries;
-            tabGCC.Tag = gcc;
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.C_Includes.Add(fbd.SelectedPath.ToLower());
+                    gcc_CIncludes_ListItems_Bind(gcc);
+                }
+            }
         }
-        void gcc_CIncludes_ListItems_Bind(oGCC gcc)
+
+        private void gcc_CIncludes_Remove_Button_Click(object sender, EventArgs e)
         {
-            gcc_CIncludes_ListItem.DataSource = null;
-            gcc_CIncludes_ListItem.DataSource = gcc.C_Includes;
-            tabGCC.Tag = gcc;
+            if (gcc_Binaries_ListItems.SelectedItem != null)
+            {
+                string _itemSelect = gcc_CIncludes_ListItem.SelectedItem.ToString();
+                if (!string.IsNullOrEmpty(_itemSelect))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.C_Includes.Remove(_itemSelect);
+                    gcc_CIncludes_ListItems_Bind(gcc);
+                }
+            }
         }
-        void gcc_CppIncludes_ListItems_Bind(oGCC gcc)
+
+        private void gcc_CppIncludes_Add_Button_Click(object sender, EventArgs e)
         {
-            gcc_CppIncludes_ListItem.DataSource = null;
-            gcc_CppIncludes_ListItem.DataSource = gcc.Cpp_Includes;
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.Cpp_Includes.Add(fbd.SelectedPath.ToLower());
+                    gcc_CppIncludes_ListItems_Bind(gcc);
+                }
+            }
+        }
+
+        private void gcc_CppIncludes_Remove_Button_Click(object sender, EventArgs e)
+        {
+            if (gcc_Binaries_ListItems.SelectedItem != null)
+            {
+                string _itemSelect = gcc_CppIncludes_ListItem.SelectedItem.ToString();
+                if (!string.IsNullOrEmpty(_itemSelect))
+                {
+                    oGCC gcc = (oGCC)tabGCC.Tag;
+                    gcc.Cpp_Includes.Remove(_itemSelect);
+                    gcc_CppIncludes_ListItems_Bind(gcc);
+                }
+            }
+        }
+
+        private void gcc_SAVE_Button_Click(object sender, EventArgs e)
+        {
+            if (tabGCC.Tag != null)
+            {
+                App.gcc_Update((oGCC)tabGCC.Tag);
+                App.WriteFile();
+            }
+        }
+
+        private void gcc_Cancel_Button_Click(object sender, EventArgs e)
+        {
+            oGCC gcc = gcc_LoadDefault();
             tabGCC.Tag = gcc;
+            gcc_BindUI(gcc);
+            App.gcc_Update(gcc);
         }
 
         #endregion
 
         #region [ === TAB: Makefile === ]
 
-        void makefile_init(){
+        void makefile_init()
+        {
             makefile_Select_FileType.SelectedIndex = 0;
         }
 
@@ -142,7 +272,7 @@ namespace gcc_build_app
 
         #region [ === TAB: Module === ]
 
-        void module_init() 
+        void module_init()
         {
             module_Type_Select.SelectedIndex = 0;
         }
@@ -189,7 +319,7 @@ namespace gcc_build_app
         {
             using (var fbd = new FolderBrowserDialog())
             {
-                DialogResult result = fbd.ShowDialog(); 
+                DialogResult result = fbd.ShowDialog();
                 if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
                 {
                 }
@@ -197,6 +327,9 @@ namespace gcc_build_app
         }
 
         #endregion
+
+
+
 
     }
 }

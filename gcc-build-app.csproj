@@ -150,7 +150,7 @@
     <Compile Include="MODEL\oInclude.cs" />
     <Compile Include="MODEL\oModule.cs" />
     <Compile Include="MODEL\oProject.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LIB\ProtoBuf\BclHelpers.cs" />
     <Compile Include="LIB\ProtoBuf\BufferExtension.cs" />
