@@ -34,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MsgPack">
-      <HintPath>.\MsgPack.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -52,6 +48,43 @@
     <Compile Include="fApp.Designer.cs">
       <DependentUpon>fApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="LIB\FileBrowserControl\Browser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LIB\FileBrowserControl\Browser.Designer.cs">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LIB\FileBrowserControl\BrowserControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LIB\FileBrowserControl\BrowserWrappers\BrowserContextMenuWrappers.cs" />
+    <Compile Include="LIB\FileBrowserControl\BrowserWrappers\BrowserDragWrappers.cs" />
+    <Compile Include="LIB\FileBrowserControl\BrowserWrappers\BrowserDropWrappers.cs" />
+    <Compile Include="LIB\FileBrowserControl\BrowserWrappers\BrowserPluginWrapper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IContextMenu.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IDragSourceHelper.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IDropSource.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IDropTarget.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IDropTargetHelper.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IEnumIDList.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IEnumSTATSTG.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IQueryInfo.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IShellExtInit.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IShellFolder.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IStorage.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\Interfaces\IStream.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\PIDL.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellAPI.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellBrowserUpdater.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellHelper.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellImageList.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\ShellItem.cs" />
+    <Compile Include="LIB\FileBrowserControl\Shell\StreamStorage.cs" />
     <Compile Include="LIB\Json\CodeBetter.Json\Converter.cs" />
     <Compile Include="LIB\Json\CodeBetter.Json\Helpers\DateHelper.cs" />
     <Compile Include="LIB\Json\CodeBetter.Json\Helpers\ListHelper.cs" />
@@ -241,6 +274,10 @@
     <EmbeddedResource Include="fApp.resx">
       <DependentUpon>fApp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LIB\FileBrowserControl\Browser.resx">
+      <DependentUpon>Browser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -261,9 +298,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="LIB\FileBrowserControl\Images\BrowseFolders.png" />
+    <None Include="LIB\FileBrowserControl\Images\BrowserBack.png" />
+    <None Include="LIB\FileBrowserControl\Images\BrowserForward.png" />
+    <None Include="LIB\FileBrowserControl\Images\BrowserUp.png" />
     <Content Include="LIB\LINQ\mono-2.8.1\corlib\System.Diagnostics\Crap.txt" />
     <Content Include="LIB\ProtoBuf\_ReadMe.txt" />
-    <EmbeddedResource Include="MsgPack.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LIB\LINQ\mono-2.8.1\NewFolder\" />

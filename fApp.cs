@@ -31,6 +31,7 @@ namespace gcc_build_app
             InitializeComponent();
             app_init();
             _init();
+            //this.Shown += (se, ev) => { this.Top = 44; };
         }
 
         private void fApp_Load(object sender, EventArgs e)
@@ -84,7 +85,8 @@ namespace gcc_build_app
         }
         private void define_ListItem_SelectedIndexChanged(object sender, EventArgs e)
         {
-            define_Name_Text.Text = define_ListItem.SelectedItem.ToString();
+            if (define_ListItem.SelectedItem != null)
+                define_Name_Text.Text = define_ListItem.SelectedItem.ToString();
         }
 
         #endregion
@@ -370,6 +372,67 @@ namespace gcc_build_app
         }
 
         #endregion
+
+        #region [ === TREE: Project === ]
+
+        void project_getFiles(List<string> list, string path, string searchPattern)
+        { 
+            string[] fs = Directory.GetFiles(path, searchPattern);
+            list.AddRange(fs);
+            foreach (string fr in Directory.GetDirectories(path))
+                project_getFiles(list, fr, searchPattern);
+        }
+
+        private void project_Add_Button_Click(object sender, EventArgs e)
+        { 
+            using (var fbd = new FolderBrowserDialog())
+            {
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK && !string.IsNullOrEmpty(fbd.SelectedPath))
+                {
+                    string path = fbd.SelectedPath;
+                    string projectName = Path.GetFileName(path);
+
+                    TreeNode nodeProject = new TreeNode(projectName);
+                    TreeNode nodeBuild = new TreeNode("Builds");
+                    TreeNode nodeFiles = new TreeNode("Files");
+                    TreeNode nodeFiles_H = new TreeNode("Header");
+                    TreeNode nodeFiles_CPP = new TreeNode("Source");
+
+
+                    nodeFiles_H.Nodes.AddRange(Directory.GetDirectories(path)
+                        .Select(x => new TreeNode(Path.GetFileName(x)) { Tag = x })
+                        .ToArray());
+                    nodeFiles_CPP.Nodes.AddRange(Directory.GetDirectories(path)
+                        .Select(x => new TreeNode(Path.GetFileName(x)) { Tag = x })
+                        .ToArray());
+
+                    nodeFiles_H.Nodes.AddRange(Directory.GetFiles(path, "*.h")
+                        .Select(x => new TreeNode(Path.GetFileName(x)))
+                        .ToArray());
+                    nodeFiles_CPP.Nodes.AddRange(Directory.GetFiles(path, "*.cpp")
+                        .Select(x => new TreeNode(Path.GetFileName(x)))
+                        .ToArray());
+
+
+                    List<string> list = new List<string>() { };
+                    project_getFiles(list, path, "*.h");
+                    nodeFiles.Nodes.AddRange(new TreeNode[] { nodeFiles_H, nodeFiles_CPP });
+
+                    nodeProject.Nodes.AddRange(new TreeNode[] { nodeBuild, nodeFiles });
+                    //nodeProject.ExpandAll();
+                    //treeProject.Nodes.Add(nodeProject);
+                }
+            }
+        } 
+
+        private void project_tree_save_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
 
 
 
