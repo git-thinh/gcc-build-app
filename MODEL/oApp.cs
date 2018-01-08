@@ -7,12 +7,41 @@ using System.Text;
 namespace gcc_build_app
 {
     [ProtoContract]
+    public class oCommand
+    {
+        [ProtoMember(1)]
+        public bool isOptionCustom { set; get; }
+
+        [ProtoMember(2)]
+        public string FileName { set; get; }
+
+        [ProtoMember(3)]
+        public string Options { set; get; }
+
+        [ProtoMember(4)]
+        public int Order { set; get; }
+    }
+
+    [ProtoContract]
     public class oApp
     {
         [ProtoMember(1)]
+        public string Name { set; get; }
+        
+        [ProtoMember(2)]
+        public string PathRootCpp { set; get; }
+
+        /*============================================================*/
+        
+        [ProtoMember(3)]
         public List<string> Defines { get { return _defines; } }
 
         private List<string> _defines = new List<string>();
+        public void set_Define(List<string> defs)
+        {
+            _defines = defs;
+        }
+
         public bool update_Define(string def_old, string def_new)
         {
             int index = _defines.FindIndex(x => x == def_old);
@@ -44,7 +73,7 @@ namespace gcc_build_app
             return false;
         }
         /*============================================================*/
-        [ProtoMember(2)]
+        [ProtoMember(4)]
         public List<oProject> Projects { get { return _projects; } }
 
         private List<oProject> _projects = new List<oProject>();
@@ -57,7 +86,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(3)]
+        [ProtoMember(5)]
         public List<oModule> Modules { get { return _modules; } }
 
         private List<oModule> _modules = new List<oModule>();
@@ -70,7 +99,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(4)]
+        [ProtoMember(6)]
         public List<oGCC> GCCs { get { return _gccs; } }
 
         private List<oGCC> _gccs = new List<oGCC>();
@@ -83,7 +112,7 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(5)]
+        [ProtoMember(7)]
         public List<oBookMark> BookMarks { get { return _bookmarks; } }
 
         private List<oBookMark> _bookmarks = new List<oBookMark>();
@@ -96,7 +125,20 @@ namespace gcc_build_app
 
         }
         /*============================================================*/
-        [ProtoMember(6)]
+        [ProtoMember(8)]
+        public List<oCommand> Commands { get { return _commands; } }
+
+        private List<oCommand> _commands = new List<oCommand>();
+        public void addnew_Command(string makefile)
+        {
+
+        }
+        public void remove_Command(int index)
+        {
+
+        }
+        /*============================================================*/
+        [ProtoMember(9)]
         public List<string> Makefiles { get { return _makefiles; } }
 
         private List<string> _makefiles = new List<string>();
@@ -107,6 +149,13 @@ namespace gcc_build_app
         public void remove_Makefile(int index)
         {
 
+        }
+         
+        /*============================================================*/
+
+        public override string ToString()
+        {
+            return string.Format("{0}: {1}", Name, PathRootCpp);
         }
     }
 }

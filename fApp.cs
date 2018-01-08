@@ -8,20 +8,37 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Linq.Dynamic;
 using System.IO;
+using ProtoBuf;
 
 
 namespace gcc_build_app
 {
     public partial class fApp : Form
     {
+        List<oApp> _listApps = new List<oApp>() { };
+        oApp _app = null;
+
+        string m_compile_PathOutput = @"c:\gcc-build";
+
+        string m_explorer_PathCurrent = "";
         string m_gcc_PathEnvironment = "";
+        string m_build_PathRoot = "";
+        string m_build_PathRootCpp = "";
+        string m_build_PathFileCurrent = "";
+
+        List<string> _listFileH = new List<string>() { };
+        List<string> _listFileCpp = new List<string>() { };
 
         void _init()
         {
+            if (!Directory.Exists(m_compile_PathOutput)) Directory.CreateDirectory(m_compile_PathOutput);
+            m_build_PathRoot = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             gcc_init();
             makefile_init();
             define_BindUI();
             module_init();
+
+            project_loadInit();
         }
 
         #region [ === MAIN ==== ]
@@ -30,13 +47,12 @@ namespace gcc_build_app
         {
             InitializeComponent();
             app_init();
-            _init();
             //this.Shown += (se, ev) => { this.Top = 44; };
         }
 
         private void fApp_Load(object sender, EventArgs e)
         {
-
+            _init();
         }
 
         void app_init()
@@ -373,10 +389,34 @@ namespace gcc_build_app
 
         #endregion
 
-        #region [ === TREE: Project === ]
+        #region [ === TAB: Project === ]
+
+        void project_loadInit() {
+            _listApps = Directory.GetFiles(m_build_PathRoot, "*.bgcc")
+                .Select(x => Serializer.Deserialize<oApp>(File.OpenRead(x)))
+                .Where(x => x != null && Directory.Exists(x.PathRootCpp))
+                .ToList();
+            file_Build_ListItem.DataSource = null;
+            file_Build_ListItem.DataSource = _listApps.Select(x => x.Name).ToArray();
+            if (_listApps.Count > 0)
+            {
+                _app = _listApps[0];
+                project_BindUI();
+            }
+            else {
+                fileBrowser1.SelectPath(@"C:\", true);
+            }
+        }
+
+        void project_BindUI() {
+            project_ItemSelect_PathRootCpp_TextBox.Text = _app.PathRootCpp;
+            project_ItemSelect_Name_TextBox.Text = _app.Name;
+            fileBrowser1.SelectPath(_app.PathRootCpp, true);
+        }
+
 
         void project_getFiles(List<string> list, string path, string searchPattern)
-        { 
+        {
             string[] fs = Directory.GetFiles(path, searchPattern);
             list.AddRange(fs);
             foreach (string fr in Directory.GetDirectories(path))
@@ -384,7 +424,7 @@ namespace gcc_build_app
         }
 
         private void project_Add_Button_Click(object sender, EventArgs e)
-        { 
+        {
             using (var fbd = new FolderBrowserDialog())
             {
                 DialogResult result = fbd.ShowDialog();
@@ -424,16 +464,91 @@ namespace gcc_build_app
                     //treeProject.Nodes.Add(nodeProject);
                 }
             }
-        } 
+        }
 
         private void project_tree_save_button_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void build_AddNew_Button_Click(object sender, EventArgs e)
+        {
+            build_AddNew();
+        }
+         
+
+        void build_AddNew() {
+            if (!Directory.Exists(m_explorer_PathCurrent))
+            {
+                MessageBox.Show("Please chose folder contain source CPP in tab Explorer!", _CONST.APP_NAME);
+                return;
+            }
+            string defValue = Path.GetFileName(m_explorer_PathCurrent);
+            string name = Prompt.ShowDialog("Input build file name:", _CONST.APP_NAME, defValue);
+            if (!string.IsNullOrEmpty(name)) {
+                string _file = Path.Combine(m_build_PathRoot, name + ".bgcc");
+                if (!File.Exists(_file))
+                {
+                    _app = new oApp() { Name = name, PathRootCpp = m_explorer_PathCurrent };
+                    if(tabGCC.Tag != null) _app.update_GCC((oGCC)tabGCC.Tag);
+                    if (tabDefine.Tag != null) _app.set_Define((List<string>)tabDefine.Tag);
+
+                    using (Stream ms = new FileStream(_file, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write))
+                        Serializer.Serialize(ms, _app);
+                    project_loadInit();
+                    int index = _listApps.FindIndex(x => x.Name == name);
+                    if (index >= 0)
+                    {
+                        _app = _listApps[index];
+                        project_BindUI();
+                    }
+                } else {
+                    MessageBox.Show("File " + name + ".bgcc exist, Input other name..." , _CONST.APP_NAME);
+                    build_AddNew();
+                }
+            }
+        }
+
+        void build_RUN() {
+            if (File.Exists(m_build_PathFileCurrent))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Can not select file *.bgcc to build", _CONST.APP_NAME);
+            }
+        }
+
+        private void fileBrowser1_SelectedFolderChanged(object sender, SelectedFolderChangedEventArgs e)
+        {
+            string path = e.Path;
+            if (path[1] == ':' && path[2] == '\\')
+            {
+                m_explorer_PathCurrent = path; 
+            }
+        }
+
+
+        private void file_Build_ListItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (file_Build_ListItem.SelectedItem != null)
+            {
+                string name = file_Build_ListItem.SelectedItem.ToString();
+                int index = _listApps.FindIndex(x => x.Name == name);
+                if (index >= 0) {
+                    _app = _listApps[index];
+                    project_BindUI();
+                }
+            }
+        }
+
+        private void build_Button_Compile_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
-
-
 
 
 

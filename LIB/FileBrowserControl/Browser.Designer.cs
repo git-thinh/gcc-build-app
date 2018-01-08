@@ -42,7 +42,6 @@ namespace gcc_build_app
             this.navFoldersButton = new System.Windows.Forms.ToolStripButton();
             this.navAddressLabel = new System.Windows.Forms.ToolStripLabel();
             this.navAddressBox = new gcc_build_app.BrowserComboBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.browseSplitter.Panel1.SuspendLayout();
             this.browseSplitter.Panel2.SuspendLayout();
             this.browseSplitter.SuspendLayout();
@@ -160,7 +159,6 @@ namespace gcc_build_app
             this.navUpButton,
             this.toolStripSeparator1,
             this.navFoldersButton,
-            this.toolStripButton1,
             this.navAddressLabel,
             this.navAddressBox});
             this.navigationBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -230,7 +228,7 @@ namespace gcc_build_app
             this.navAddressLabel.MergeIndex = 0;
             this.navAddressLabel.Name = "navAddressLabel";
             this.navAddressLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.navAddressLabel.Size = new System.Drawing.Size(46, 28);
+            this.navAddressLabel.Size = new System.Drawing.Size(49, 28);
             this.navAddressLabel.Text = "Address";
             // 
             // navAddressBox
@@ -242,16 +240,7 @@ namespace gcc_build_app
             this.navAddressBox.MaxDropDownItems = 14;
             this.navAddressBox.MergeIndex = 0;
             this.navAddressBox.Name = "navAddressBox";
-            this.navAddressBox.Size = new System.Drawing.Size(200, 22);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(33, 28);
-            this.toolStripButton1.Text = "Build";
+            this.navAddressBox.Size = new System.Drawing.Size(200, 24);
             // 
             // Browser
             // 
@@ -291,7 +280,6 @@ namespace gcc_build_app
         private System.Windows.Forms.ToolStripSplitButton navBackButton;
         private System.Windows.Forms.ToolStripSplitButton navForwardButton;
         private System.Windows.Forms.SplitContainer viewSplitContainer;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
 
     }
 }

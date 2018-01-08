@@ -29,59 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fApp));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Local Disk (C:)", 23, 125, new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Data (D:)", 23, 125, new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("DVD Drive (E:)", 25, 126, new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("CD Drive (F:)", 27, 127, new System.Windows.Forms.TreeNode[] {
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Working (G:)", 23, 125, new System.Windows.Forms.TreeNode[] {
-            treeNode9});
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Run (H:)", 23, 125, new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Backup (I:)", 23, 125, new System.Windows.Forms.TreeNode[] {
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Control Panel", 17, 122, new System.Windows.Forms.TreeNode[] {
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Shared Documents", 123, 124, new System.Windows.Forms.TreeNode[] {
-            treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("My Computer", 9, 118, new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode4,
-            treeNode6,
-            treeNode8,
-            treeNode10,
-            treeNode12,
-            treeNode14,
-            treeNode16,
-            treeNode18});
             this.mnMain = new System.Windows.Forms.MenuStrip();
             this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.project_ItemSelect_PathRootCpp_TextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.project_ItemSelect_Name_TextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.tabCategory = new System.Windows.Forms.TabControl();
+            this.tabProject = new System.Windows.Forms.TabPage();
+            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabFileBuild = new System.Windows.Forms.TabPage();
+            this.file_Build_ListItem = new System.Windows.Forms.ListBox();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.build_AddProject_Button = new System.Windows.Forms.Button();
+            this.build_Button_Compile = new System.Windows.Forms.Button();
+            this.tabFileHeader = new System.Windows.Forms.TabPage();
+            this.file_Header_ListItem = new System.Windows.Forms.CheckedListBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.tabFileCpp = new System.Windows.Forms.TabPage();
+            this.file_Cpp_ListItem = new System.Windows.Forms.CheckedListBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tabFileOther = new System.Windows.Forms.TabPage();
+            this.file_Other_ListItem = new System.Windows.Forms.CheckedListBox();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabClass = new System.Windows.Forms.TabPage();
             this.toolBarClass = new System.Windows.Forms.ToolStrip();
             this.treeClass = new System.Windows.Forms.TreeView();
             this.tabBookMark = new System.Windows.Forms.TabPage();
             this.treeBookMark = new System.Windows.Forms.TreeView();
             this.toolBarBookMark = new System.Windows.Forms.ToolStrip();
-            this.tabFile = new System.Windows.Forms.TabPage();
-            this.treeFile = new System.Windows.Forms.TreeView();
-            this.toolBarFile = new System.Windows.Forms.ToolStrip();
             this.splitterCenter = new System.Windows.Forms.Splitter();
             this.tabMain = new System.Windows.Forms.TabControl();
-            this.tabProject = new System.Windows.Forms.TabPage();
+            this.tabExplorer = new System.Windows.Forms.TabPage();
+            this.fileBrowser1 = new gcc_build_app.Browser();
+            this.pluginWrapper = new gcc_build_app.BrowserPluginWrapper();
+            this.shellBrowser = new ShellDll.ShellBrowser();
             this.tabDefine = new System.Windows.Forms.TabPage();
             this.define_ListItem = new System.Windows.Forms.CheckedListBox();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -162,28 +148,6 @@
             this.module_Button_SelectModule = new System.Windows.Forms.Button();
             this.module_Button_RemoveModule = new System.Windows.Forms.Button();
             this.module_Button_UpdateModule = new System.Windows.Forms.Button();
-            this.tabProjectOption = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.prj_option_FileItem_Name_Text = new System.Windows.Forms.TextBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.prj_option_FileItem_Setting_Text = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.prj_option_ProjectItem_Setting_Text = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.prj_option_ProjectItem_Name_Text = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.prj_option_ListFiles = new System.Windows.Forms.ListBox();
-            this.prj_option_ListCheck_Projects = new System.Windows.Forms.CheckedListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.prj_option_Button_Select = new System.Windows.Forms.Button();
-            this.prj_option_Button_Remove = new System.Windows.Forms.Button();
-            this.prj_option_Button_Update = new System.Windows.Forms.Button();
             this.tabMakefile = new System.Windows.Forms.TabPage();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -193,16 +157,22 @@
             this.compile_LOG_TextBox = new System.Windows.Forms.TextBox();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.fileBrowser1 = new gcc_build_app.Browser();
-            this.pluginWrapper = new gcc_build_app.BrowserPluginWrapper();
-            this.shellBrowser = new ShellDll.ShellBrowser();
             this.mnMain.SuspendLayout();
             this.tabCategory.SuspendLayout();
+            this.tabProject.SuspendLayout();
+            this.tabControl3.SuspendLayout();
+            this.tabFileBuild.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.tabFileHeader.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.tabFileCpp.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.tabFileOther.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.tabClass.SuspendLayout();
             this.tabBookMark.SuspendLayout();
-            this.tabFile.SuspendLayout();
             this.tabMain.SuspendLayout();
-            this.tabProject.SuspendLayout();
+            this.tabExplorer.SuspendLayout();
             this.tabDefine.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -229,12 +199,6 @@
             this.groupBox1.SuspendLayout();
             this.tabModuleConfig.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.tabProjectOption.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.tabMakefile.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabCompileLOG.SuspendLayout();
@@ -244,7 +208,11 @@
             // mnMain
             // 
             this.mnMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fILEToolStripMenuItem});
+            this.fILEToolStripMenuItem,
+            this.toolStripTextBox1,
+            this.project_ItemSelect_PathRootCpp_TextBox,
+            this.project_ItemSelect_Name_TextBox,
+            this.toolStripTextBox2});
             this.mnMain.Location = new System.Drawing.Point(0, 0);
             this.mnMain.Name = "mnMain";
             this.mnMain.Size = new System.Drawing.Size(949, 24);
@@ -256,26 +224,266 @@
             this.fILEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fILEToolStripMenuItem.Name = "fILEToolStripMenuItem";
-            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fILEToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fILEToolStripMenuItem.Text = "&File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
+            this.toolStripTextBox1.Size = new System.Drawing.Size(44, 16);
+            this.toolStripTextBox1.Text = "Path:";
+            this.toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // project_ItemSelect_PathRootCpp_TextBox
+            // 
+            this.project_ItemSelect_PathRootCpp_TextBox.AutoSize = false;
+            this.project_ItemSelect_PathRootCpp_TextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.project_ItemSelect_PathRootCpp_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.project_ItemSelect_PathRootCpp_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.project_ItemSelect_PathRootCpp_TextBox.Name = "project_ItemSelect_PathRootCpp_TextBox";
+            this.project_ItemSelect_PathRootCpp_TextBox.ReadOnly = true;
+            this.project_ItemSelect_PathRootCpp_TextBox.Size = new System.Drawing.Size(600, 16);
+            // 
+            // project_ItemSelect_Name_TextBox
+            // 
+            this.project_ItemSelect_Name_TextBox.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.project_ItemSelect_Name_TextBox.AutoSize = false;
+            this.project_ItemSelect_Name_TextBox.BackColor = System.Drawing.SystemColors.Info;
+            this.project_ItemSelect_Name_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.project_ItemSelect_Name_TextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.project_ItemSelect_Name_TextBox.Name = "project_ItemSelect_Name_TextBox";
+            this.project_ItemSelect_Name_TextBox.ReadOnly = true;
+            this.project_ItemSelect_Name_TextBox.Size = new System.Drawing.Size(199, 20);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripTextBox2.AutoSize = false;
+            this.toolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
+            this.toolStripTextBox2.Size = new System.Drawing.Size(47, 20);
+            this.toolStripTextBox2.Text = "Project:";
             // 
             // tabCategory
             // 
-            this.tabCategory.Controls.Add(this.tabFile);
+            this.tabCategory.Controls.Add(this.tabProject);
             this.tabCategory.Controls.Add(this.tabClass);
             this.tabCategory.Controls.Add(this.tabBookMark);
             this.tabCategory.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tabCategory.Location = new System.Drawing.Point(718, 24);
+            this.tabCategory.Location = new System.Drawing.Point(657, 24);
             this.tabCategory.Name = "tabCategory";
             this.tabCategory.SelectedIndex = 0;
-            this.tabCategory.Size = new System.Drawing.Size(231, 415);
+            this.tabCategory.Size = new System.Drawing.Size(292, 415);
             this.tabCategory.TabIndex = 2;
+            // 
+            // tabProject
+            // 
+            this.tabProject.Controls.Add(this.tabControl3);
+            this.tabProject.Location = new System.Drawing.Point(4, 22);
+            this.tabProject.Margin = new System.Windows.Forms.Padding(0);
+            this.tabProject.Name = "tabProject";
+            this.tabProject.Size = new System.Drawing.Size(284, 389);
+            this.tabProject.TabIndex = 5;
+            this.tabProject.Text = "Project";
+            this.tabProject.UseVisualStyleBackColor = true;
+            // 
+            // tabControl3
+            // 
+            this.tabControl3.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControl3.Controls.Add(this.tabFileBuild);
+            this.tabControl3.Controls.Add(this.tabFileHeader);
+            this.tabControl3.Controls.Add(this.tabFileCpp);
+            this.tabControl3.Controls.Add(this.tabFileOther);
+            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl3.Location = new System.Drawing.Point(0, 0);
+            this.tabControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.tabControl3.Name = "tabControl3";
+            this.tabControl3.Padding = new System.Drawing.Point(0, 0);
+            this.tabControl3.SelectedIndex = 0;
+            this.tabControl3.Size = new System.Drawing.Size(284, 389);
+            this.tabControl3.TabIndex = 0;
+            // 
+            // tabFileBuild
+            // 
+            this.tabFileBuild.Controls.Add(this.file_Build_ListItem);
+            this.tabFileBuild.Controls.Add(this.panel16);
+            this.tabFileBuild.Location = new System.Drawing.Point(4, 4);
+            this.tabFileBuild.Name = "tabFileBuild";
+            this.tabFileBuild.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFileBuild.Size = new System.Drawing.Size(276, 363);
+            this.tabFileBuild.TabIndex = 0;
+            this.tabFileBuild.Text = "Build";
+            this.tabFileBuild.UseVisualStyleBackColor = true;
+            // 
+            // file_Build_ListItem
+            // 
+            this.file_Build_ListItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.file_Build_ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.file_Build_ListItem.FormattingEnabled = true;
+            this.file_Build_ListItem.Location = new System.Drawing.Point(3, 3);
+            this.file_Build_ListItem.Name = "file_Build_ListItem";
+            this.file_Build_ListItem.Size = new System.Drawing.Size(270, 328);
+            this.file_Build_ListItem.TabIndex = 1;
+            this.file_Build_ListItem.SelectedIndexChanged += new System.EventHandler(this.file_Build_ListItem_SelectedIndexChanged);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.SystemColors.Control;
+            this.panel16.Controls.Add(this.build_AddProject_Button);
+            this.panel16.Controls.Add(this.build_Button_Compile);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel16.Location = new System.Drawing.Point(3, 331);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(270, 29);
+            this.panel16.TabIndex = 0;
+            // 
+            // build_AddProject_Button
+            // 
+            this.build_AddProject_Button.Location = new System.Drawing.Point(3, 3);
+            this.build_AddProject_Button.Name = "build_AddProject_Button";
+            this.build_AddProject_Button.Size = new System.Drawing.Size(71, 23);
+            this.build_AddProject_Button.TabIndex = 1;
+            this.build_AddProject_Button.Text = "Add Project";
+            this.build_AddProject_Button.UseVisualStyleBackColor = true;
+            this.build_AddProject_Button.Click += new System.EventHandler(this.build_AddNew_Button_Click);
+            // 
+            // build_Button_Compile
+            // 
+            this.build_Button_Compile.Location = new System.Drawing.Point(201, 2);
+            this.build_Button_Compile.Name = "build_Button_Compile";
+            this.build_Button_Compile.Size = new System.Drawing.Size(66, 23);
+            this.build_Button_Compile.TabIndex = 0;
+            this.build_Button_Compile.Text = "Compile";
+            this.build_Button_Compile.UseVisualStyleBackColor = true;
+            this.build_Button_Compile.Click += new System.EventHandler(this.build_Button_Compile_Click);
+            // 
+            // tabFileHeader
+            // 
+            this.tabFileHeader.Controls.Add(this.file_Header_ListItem);
+            this.tabFileHeader.Controls.Add(this.panel17);
+            this.tabFileHeader.Location = new System.Drawing.Point(4, 4);
+            this.tabFileHeader.Name = "tabFileHeader";
+            this.tabFileHeader.Padding = new System.Windows.Forms.Padding(3);
+            this.tabFileHeader.Size = new System.Drawing.Size(276, 363);
+            this.tabFileHeader.TabIndex = 1;
+            this.tabFileHeader.Text = "Header";
+            this.tabFileHeader.UseVisualStyleBackColor = true;
+            // 
+            // file_Header_ListItem
+            // 
+            this.file_Header_ListItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.file_Header_ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.file_Header_ListItem.FormattingEnabled = true;
+            this.file_Header_ListItem.Location = new System.Drawing.Point(3, 32);
+            this.file_Header_ListItem.Name = "file_Header_ListItem";
+            this.file_Header_ListItem.Size = new System.Drawing.Size(270, 328);
+            this.file_Header_ListItem.TabIndex = 0;
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.button2);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(3, 3);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(270, 29);
+            this.panel17.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(223, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "xxx";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // tabFileCpp
+            // 
+            this.tabFileCpp.Controls.Add(this.file_Cpp_ListItem);
+            this.tabFileCpp.Controls.Add(this.panel18);
+            this.tabFileCpp.Location = new System.Drawing.Point(4, 4);
+            this.tabFileCpp.Name = "tabFileCpp";
+            this.tabFileCpp.Size = new System.Drawing.Size(276, 363);
+            this.tabFileCpp.TabIndex = 2;
+            this.tabFileCpp.Text = "Source";
+            this.tabFileCpp.UseVisualStyleBackColor = true;
+            // 
+            // file_Cpp_ListItem
+            // 
+            this.file_Cpp_ListItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.file_Cpp_ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.file_Cpp_ListItem.FormattingEnabled = true;
+            this.file_Cpp_ListItem.Location = new System.Drawing.Point(0, 29);
+            this.file_Cpp_ListItem.Name = "file_Cpp_ListItem";
+            this.file_Cpp_ListItem.Size = new System.Drawing.Size(276, 334);
+            this.file_Cpp_ListItem.TabIndex = 2;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.button3);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(276, 29);
+            this.panel18.TabIndex = 3;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(223, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(44, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "xxx";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // tabFileOther
+            // 
+            this.tabFileOther.Controls.Add(this.file_Other_ListItem);
+            this.tabFileOther.Controls.Add(this.panel19);
+            this.tabFileOther.Location = new System.Drawing.Point(4, 4);
+            this.tabFileOther.Name = "tabFileOther";
+            this.tabFileOther.Size = new System.Drawing.Size(276, 363);
+            this.tabFileOther.TabIndex = 3;
+            this.tabFileOther.Text = "Other";
+            this.tabFileOther.UseVisualStyleBackColor = true;
+            // 
+            // file_Other_ListItem
+            // 
+            this.file_Other_ListItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.file_Other_ListItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.file_Other_ListItem.FormattingEnabled = true;
+            this.file_Other_ListItem.Location = new System.Drawing.Point(0, 29);
+            this.file_Other_ListItem.Name = "file_Other_ListItem";
+            this.file_Other_ListItem.Size = new System.Drawing.Size(276, 334);
+            this.file_Other_ListItem.TabIndex = 2;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.button4);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(276, 29);
+            this.panel19.TabIndex = 3;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(223, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(44, 23);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "xxx";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // tabClass
             // 
@@ -284,7 +492,7 @@
             this.tabClass.Location = new System.Drawing.Point(4, 22);
             this.tabClass.Name = "tabClass";
             this.tabClass.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClass.Size = new System.Drawing.Size(223, 389);
+            this.tabClass.Size = new System.Drawing.Size(284, 389);
             this.tabClass.TabIndex = 1;
             this.tabClass.Text = "Class";
             this.tabClass.UseVisualStyleBackColor = true;
@@ -294,7 +502,7 @@
             this.toolBarClass.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolBarClass.Location = new System.Drawing.Point(3, 3);
             this.toolBarClass.Name = "toolBarClass";
-            this.toolBarClass.Size = new System.Drawing.Size(217, 25);
+            this.toolBarClass.Size = new System.Drawing.Size(278, 25);
             this.toolBarClass.TabIndex = 1;
             this.toolBarClass.Text = "toolStrip2";
             // 
@@ -304,7 +512,7 @@
             this.treeClass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeClass.Location = new System.Drawing.Point(3, 3);
             this.treeClass.Name = "treeClass";
-            this.treeClass.Size = new System.Drawing.Size(217, 383);
+            this.treeClass.Size = new System.Drawing.Size(278, 383);
             this.treeClass.TabIndex = 0;
             // 
             // tabBookMark
@@ -313,7 +521,7 @@
             this.tabBookMark.Controls.Add(this.toolBarBookMark);
             this.tabBookMark.Location = new System.Drawing.Point(4, 22);
             this.tabBookMark.Name = "tabBookMark";
-            this.tabBookMark.Size = new System.Drawing.Size(223, 389);
+            this.tabBookMark.Size = new System.Drawing.Size(284, 389);
             this.tabBookMark.TabIndex = 4;
             this.tabBookMark.Text = "BookMark";
             this.tabBookMark.UseVisualStyleBackColor = true;
@@ -324,7 +532,7 @@
             this.treeBookMark.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeBookMark.Location = new System.Drawing.Point(0, 25);
             this.treeBookMark.Name = "treeBookMark";
-            this.treeBookMark.Size = new System.Drawing.Size(223, 364);
+            this.treeBookMark.Size = new System.Drawing.Size(284, 364);
             this.treeBookMark.TabIndex = 1;
             // 
             // toolBarBookMark
@@ -332,44 +540,14 @@
             this.toolBarBookMark.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolBarBookMark.Location = new System.Drawing.Point(0, 0);
             this.toolBarBookMark.Name = "toolBarBookMark";
-            this.toolBarBookMark.Size = new System.Drawing.Size(223, 25);
+            this.toolBarBookMark.Size = new System.Drawing.Size(284, 25);
             this.toolBarBookMark.TabIndex = 0;
             this.toolBarBookMark.Text = "toolStrip3";
-            // 
-            // tabFile
-            // 
-            this.tabFile.Controls.Add(this.treeFile);
-            this.tabFile.Controls.Add(this.toolBarFile);
-            this.tabFile.Location = new System.Drawing.Point(4, 22);
-            this.tabFile.Name = "tabFile";
-            this.tabFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFile.Size = new System.Drawing.Size(223, 389);
-            this.tabFile.TabIndex = 5;
-            this.tabFile.Text = "File";
-            this.tabFile.UseVisualStyleBackColor = true;
-            // 
-            // treeFile
-            // 
-            this.treeFile.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.treeFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeFile.Location = new System.Drawing.Point(3, 28);
-            this.treeFile.Name = "treeFile";
-            this.treeFile.Size = new System.Drawing.Size(217, 358);
-            this.treeFile.TabIndex = 1;
-            // 
-            // toolBarFile
-            // 
-            this.toolBarFile.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolBarFile.Location = new System.Drawing.Point(3, 3);
-            this.toolBarFile.Name = "toolBarFile";
-            this.toolBarFile.Size = new System.Drawing.Size(217, 25);
-            this.toolBarFile.TabIndex = 0;
-            this.toolBarFile.Text = "toolStrip4";
             // 
             // splitterCenter
             // 
             this.splitterCenter.Dock = System.Windows.Forms.DockStyle.Right;
-            this.splitterCenter.Location = new System.Drawing.Point(713, 24);
+            this.splitterCenter.Location = new System.Drawing.Point(652, 24);
             this.splitterCenter.MinExtra = 0;
             this.splitterCenter.MinSize = 0;
             this.splitterCenter.Name = "splitterCenter";
@@ -379,30 +557,47 @@
             // 
             // tabMain
             // 
-            this.tabMain.Controls.Add(this.tabProject);
+            this.tabMain.Controls.Add(this.tabExplorer);
             this.tabMain.Controls.Add(this.tabDefine);
             this.tabMain.Controls.Add(this.tabGCC);
             this.tabMain.Controls.Add(this.tabModule);
-            this.tabMain.Controls.Add(this.tabProjectOption);
             this.tabMain.Controls.Add(this.tabMakefile);
             this.tabMain.Controls.Add(this.tabCompileLOG);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 24);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(713, 415);
+            this.tabMain.Size = new System.Drawing.Size(652, 415);
             this.tabMain.TabIndex = 4;
             // 
-            // tabProject
+            // tabExplorer
             // 
-            this.tabProject.Controls.Add(this.fileBrowser1);
-            this.tabProject.Location = new System.Drawing.Point(4, 22);
-            this.tabProject.Name = "tabProject";
-            this.tabProject.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProject.Size = new System.Drawing.Size(705, 389);
-            this.tabProject.TabIndex = 8;
-            this.tabProject.Text = "Project";
-            this.tabProject.UseVisualStyleBackColor = true;
+            this.tabExplorer.Controls.Add(this.fileBrowser1);
+            this.tabExplorer.Location = new System.Drawing.Point(4, 22);
+            this.tabExplorer.Name = "tabExplorer";
+            this.tabExplorer.Padding = new System.Windows.Forms.Padding(3);
+            this.tabExplorer.Size = new System.Drawing.Size(644, 389);
+            this.tabExplorer.TabIndex = 8;
+            this.tabExplorer.Text = "Explorer";
+            this.tabExplorer.UseVisualStyleBackColor = true;
+            // 
+            // fileBrowser1
+            // 
+            this.fileBrowser1.AllowDrop = true;
+            this.fileBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileBrowser1.ListViewMode = System.Windows.Forms.View.List;
+            this.fileBrowser1.Location = new System.Drawing.Point(3, 3);
+            this.fileBrowser1.MinimumSize = new System.Drawing.Size(300, 200);
+            this.fileBrowser1.Name = "fileBrowser1";
+            this.fileBrowser1.PluginWrapper = this.pluginWrapper;
+            this.fileBrowser1.SelectedNode = null;
+            this.fileBrowser1.ShellBrowser = this.shellBrowser;
+            this.fileBrowser1.ShowFoldersButton = false;
+            this.fileBrowser1.ShowNavigationBar = false;
+            this.fileBrowser1.Size = new System.Drawing.Size(638, 383);
+            this.fileBrowser1.SplitterDistance = 300;
+            this.fileBrowser1.TabIndex = 0;
+            this.fileBrowser1.SelectedFolderChanged += new gcc_build_app.SelectedFolderChangedEventHandler(this.fileBrowser1_SelectedFolderChanged);
             // 
             // tabDefine
             // 
@@ -412,7 +607,7 @@
             this.tabDefine.Location = new System.Drawing.Point(4, 22);
             this.tabDefine.Name = "tabDefine";
             this.tabDefine.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDefine.Size = new System.Drawing.Size(705, 364);
+            this.tabDefine.Size = new System.Drawing.Size(644, 389);
             this.tabDefine.TabIndex = 7;
             this.tabDefine.Text = "Define";
             this.tabDefine.UseVisualStyleBackColor = true;
@@ -424,7 +619,7 @@
             this.define_ListItem.FormattingEnabled = true;
             this.define_ListItem.Location = new System.Drawing.Point(3, 30);
             this.define_ListItem.Name = "define_ListItem";
-            this.define_ListItem.Size = new System.Drawing.Size(699, 307);
+            this.define_ListItem.Size = new System.Drawing.Size(638, 332);
             this.define_ListItem.TabIndex = 18;
             this.define_ListItem.SelectedIndexChanged += new System.EventHandler(this.define_ListItem_SelectedIndexChanged);
             // 
@@ -436,7 +631,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(3, 3);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(699, 27);
+            this.panel14.Size = new System.Drawing.Size(638, 27);
             this.panel14.TabIndex = 15;
             // 
             // define_Name_Text
@@ -446,13 +641,13 @@
             this.define_Name_Text.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.define_Name_Text.Location = new System.Drawing.Point(1, 3);
             this.define_Name_Text.Name = "define_Name_Text";
-            this.define_Name_Text.Size = new System.Drawing.Size(534, 20);
+            this.define_Name_Text.Size = new System.Drawing.Size(473, 20);
             this.define_Name_Text.TabIndex = 2;
             // 
             // define_Button_Remove
             // 
             this.define_Button_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.define_Button_Remove.Location = new System.Drawing.Point(621, 1);
+            this.define_Button_Remove.Location = new System.Drawing.Point(560, 1);
             this.define_Button_Remove.Name = "define_Button_Remove";
             this.define_Button_Remove.Size = new System.Drawing.Size(75, 23);
             this.define_Button_Remove.TabIndex = 1;
@@ -463,7 +658,7 @@
             // define_Button_Add
             // 
             this.define_Button_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.define_Button_Add.Location = new System.Drawing.Point(540, 2);
+            this.define_Button_Add.Location = new System.Drawing.Point(479, 2);
             this.define_Button_Add.Name = "define_Button_Add";
             this.define_Button_Add.Size = new System.Drawing.Size(75, 23);
             this.define_Button_Add.TabIndex = 0;
@@ -476,15 +671,15 @@
             this.panel15.Controls.Add(this.define_Button_Cancel);
             this.panel15.Controls.Add(this.define_Button_SAVE);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(3, 337);
+            this.panel15.Location = new System.Drawing.Point(3, 362);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(699, 24);
+            this.panel15.Size = new System.Drawing.Size(638, 24);
             this.panel15.TabIndex = 17;
             // 
             // define_Button_Cancel
             // 
             this.define_Button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.define_Button_Cancel.Location = new System.Drawing.Point(623, 1);
+            this.define_Button_Cancel.Location = new System.Drawing.Point(562, 1);
             this.define_Button_Cancel.Name = "define_Button_Cancel";
             this.define_Button_Cancel.Size = new System.Drawing.Size(75, 23);
             this.define_Button_Cancel.TabIndex = 1;
@@ -495,7 +690,7 @@
             // define_Button_SAVE
             // 
             this.define_Button_SAVE.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.define_Button_SAVE.Location = new System.Drawing.Point(545, 1);
+            this.define_Button_SAVE.Location = new System.Drawing.Point(484, 1);
             this.define_Button_SAVE.Name = "define_Button_SAVE";
             this.define_Button_SAVE.Size = new System.Drawing.Size(75, 23);
             this.define_Button_SAVE.TabIndex = 0;
@@ -514,7 +709,7 @@
             this.tabGCC.Location = new System.Drawing.Point(4, 22);
             this.tabGCC.Name = "tabGCC";
             this.tabGCC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGCC.Size = new System.Drawing.Size(705, 364);
+            this.tabGCC.Size = new System.Drawing.Size(644, 389);
             this.tabGCC.TabIndex = 2;
             this.tabGCC.Text = "GCC";
             this.tabGCC.UseVisualStyleBackColor = true;
@@ -530,7 +725,7 @@
             this.tabControl1.Location = new System.Drawing.Point(3, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(699, 307);
+            this.tabControl1.Size = new System.Drawing.Size(638, 332);
             this.tabControl1.TabIndex = 11;
             // 
             // tabGCC_General
@@ -548,7 +743,7 @@
             this.tabGCC_General.Location = new System.Drawing.Point(4, 22);
             this.tabGCC_General.Name = "tabGCC_General";
             this.tabGCC_General.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGCC_General.Size = new System.Drawing.Size(691, 281);
+            this.tabGCC_General.Size = new System.Drawing.Size(630, 306);
             this.tabGCC_General.TabIndex = 0;
             this.tabGCC_General.Text = "General";
             this.tabGCC_General.UseVisualStyleBackColor = true;
@@ -559,7 +754,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcc_Text_Option_STD_GNU__11.Location = new System.Drawing.Point(499, 6);
             this.gcc_Text_Option_STD_GNU__11.Name = "gcc_Text_Option_STD_GNU__11";
-            this.gcc_Text_Option_STD_GNU__11.Size = new System.Drawing.Size(186, 20);
+            this.gcc_Text_Option_STD_GNU__11.Size = new System.Drawing.Size(125, 20);
             this.gcc_Text_Option_STD_GNU__11.TabIndex = 13;
             this.gcc_Text_Option_STD_GNU__11.Text = "-std=gnu++11";
             // 
@@ -625,7 +820,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 130);
+            this.label3.Location = new System.Drawing.Point(3, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(253, 13);
             this.label3.TabIndex = 2;
@@ -640,18 +835,18 @@
             this.gcc_Text_Option_Other_When_Compiler.Multiline = true;
             this.gcc_Text_Option_Other_When_Compiler.Name = "gcc_Text_Option_Other_When_Compiler";
             this.gcc_Text_Option_Other_When_Compiler.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gcc_Text_Option_Other_When_Compiler.Size = new System.Drawing.Size(679, 39);
+            this.gcc_Text_Option_Other_When_Compiler.Size = new System.Drawing.Size(618, 64);
             this.gcc_Text_Option_Other_When_Compiler.TabIndex = 6;
             // 
             // gcc_Text_Option_Other_When_Linker
             // 
             this.gcc_Text_Option_Other_When_Linker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Text_Option_Other_When_Linker.Location = new System.Drawing.Point(6, 146);
+            this.gcc_Text_Option_Other_When_Linker.Location = new System.Drawing.Point(6, 171);
             this.gcc_Text_Option_Other_When_Linker.Multiline = true;
             this.gcc_Text_Option_Other_When_Linker.Name = "gcc_Text_Option_Other_When_Linker";
             this.gcc_Text_Option_Other_When_Linker.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gcc_Text_Option_Other_When_Linker.Size = new System.Drawing.Size(679, 132);
+            this.gcc_Text_Option_Other_When_Linker.Size = new System.Drawing.Size(618, 132);
             this.gcc_Text_Option_Other_When_Linker.TabIndex = 7;
             this.gcc_Text_Option_Other_When_Linker.Text = "-static-libgcc";
             // 
@@ -662,7 +857,7 @@
             this.tabGCC_Binaries.Location = new System.Drawing.Point(4, 22);
             this.tabGCC_Binaries.Name = "tabGCC_Binaries";
             this.tabGCC_Binaries.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGCC_Binaries.Size = new System.Drawing.Size(691, 281);
+            this.tabGCC_Binaries.Size = new System.Drawing.Size(630, 306);
             this.tabGCC_Binaries.TabIndex = 1;
             this.tabGCC_Binaries.Text = "Binaries";
             this.tabGCC_Binaries.UseVisualStyleBackColor = true;
@@ -674,7 +869,7 @@
             this.gcc_Binaries_ListItems.FormattingEnabled = true;
             this.gcc_Binaries_ListItems.Location = new System.Drawing.Point(3, 30);
             this.gcc_Binaries_ListItems.Name = "gcc_Binaries_ListItems";
-            this.gcc_Binaries_ListItems.Size = new System.Drawing.Size(739, 248);
+            this.gcc_Binaries_ListItems.Size = new System.Drawing.Size(624, 273);
             this.gcc_Binaries_ListItems.TabIndex = 0;
             // 
             // panel9
@@ -684,13 +879,13 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(739, 27);
+            this.panel9.Size = new System.Drawing.Size(624, 27);
             this.panel9.TabIndex = 0;
             // 
             // gcc_Binaries_Remove_Button
             // 
             this.gcc_Binaries_Remove_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Binaries_Remove_Button.Location = new System.Drawing.Point(843, 1);
+            this.gcc_Binaries_Remove_Button.Location = new System.Drawing.Point(728, 1);
             this.gcc_Binaries_Remove_Button.Name = "gcc_Binaries_Remove_Button";
             this.gcc_Binaries_Remove_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_Binaries_Remove_Button.TabIndex = 1;
@@ -701,7 +896,7 @@
             // gcc_Binaries_Add_Button
             // 
             this.gcc_Binaries_Add_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Binaries_Add_Button.Location = new System.Drawing.Point(762, 2);
+            this.gcc_Binaries_Add_Button.Location = new System.Drawing.Point(647, 2);
             this.gcc_Binaries_Add_Button.Name = "gcc_Binaries_Add_Button";
             this.gcc_Binaries_Add_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_Binaries_Add_Button.TabIndex = 0;
@@ -715,7 +910,7 @@
             this.tabGCC_Libraries.Controls.Add(this.panel10);
             this.tabGCC_Libraries.Location = new System.Drawing.Point(4, 22);
             this.tabGCC_Libraries.Name = "tabGCC_Libraries";
-            this.tabGCC_Libraries.Size = new System.Drawing.Size(691, 281);
+            this.tabGCC_Libraries.Size = new System.Drawing.Size(630, 306);
             this.tabGCC_Libraries.TabIndex = 2;
             this.tabGCC_Libraries.Text = "Libraries";
             this.tabGCC_Libraries.UseVisualStyleBackColor = true;
@@ -727,7 +922,7 @@
             this.gcc_Libraries_ListItem.FormattingEnabled = true;
             this.gcc_Libraries_ListItem.Location = new System.Drawing.Point(0, 27);
             this.gcc_Libraries_ListItem.Name = "gcc_Libraries_ListItem";
-            this.gcc_Libraries_ListItem.Size = new System.Drawing.Size(745, 254);
+            this.gcc_Libraries_ListItem.Size = new System.Drawing.Size(630, 279);
             this.gcc_Libraries_ListItem.TabIndex = 2;
             // 
             // panel10
@@ -737,13 +932,13 @@
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(745, 27);
+            this.panel10.Size = new System.Drawing.Size(630, 27);
             this.panel10.TabIndex = 1;
             // 
             // gcc_Libraries_Remove_Button
             // 
             this.gcc_Libraries_Remove_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Libraries_Remove_Button.Location = new System.Drawing.Point(849, 1);
+            this.gcc_Libraries_Remove_Button.Location = new System.Drawing.Point(734, 1);
             this.gcc_Libraries_Remove_Button.Name = "gcc_Libraries_Remove_Button";
             this.gcc_Libraries_Remove_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_Libraries_Remove_Button.TabIndex = 1;
@@ -754,7 +949,7 @@
             // gcc_Libraries_Add_Button
             // 
             this.gcc_Libraries_Add_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Libraries_Add_Button.Location = new System.Drawing.Point(768, 2);
+            this.gcc_Libraries_Add_Button.Location = new System.Drawing.Point(653, 2);
             this.gcc_Libraries_Add_Button.Name = "gcc_Libraries_Add_Button";
             this.gcc_Libraries_Add_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_Libraries_Add_Button.TabIndex = 0;
@@ -768,7 +963,7 @@
             this.tabGCC_C_Include.Controls.Add(this.panel11);
             this.tabGCC_C_Include.Location = new System.Drawing.Point(4, 22);
             this.tabGCC_C_Include.Name = "tabGCC_C_Include";
-            this.tabGCC_C_Include.Size = new System.Drawing.Size(691, 281);
+            this.tabGCC_C_Include.Size = new System.Drawing.Size(630, 306);
             this.tabGCC_C_Include.TabIndex = 3;
             this.tabGCC_C_Include.Text = "C Includes";
             this.tabGCC_C_Include.UseVisualStyleBackColor = true;
@@ -780,7 +975,7 @@
             this.gcc_CIncludes_ListItem.FormattingEnabled = true;
             this.gcc_CIncludes_ListItem.Location = new System.Drawing.Point(0, 27);
             this.gcc_CIncludes_ListItem.Name = "gcc_CIncludes_ListItem";
-            this.gcc_CIncludes_ListItem.Size = new System.Drawing.Size(745, 254);
+            this.gcc_CIncludes_ListItem.Size = new System.Drawing.Size(630, 279);
             this.gcc_CIncludes_ListItem.TabIndex = 2;
             // 
             // panel11
@@ -790,13 +985,13 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(745, 27);
+            this.panel11.Size = new System.Drawing.Size(630, 27);
             this.panel11.TabIndex = 1;
             // 
             // gcc_CIncludes_Remove_Button
             // 
             this.gcc_CIncludes_Remove_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_CIncludes_Remove_Button.Location = new System.Drawing.Point(849, 1);
+            this.gcc_CIncludes_Remove_Button.Location = new System.Drawing.Point(734, 1);
             this.gcc_CIncludes_Remove_Button.Name = "gcc_CIncludes_Remove_Button";
             this.gcc_CIncludes_Remove_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_CIncludes_Remove_Button.TabIndex = 1;
@@ -807,7 +1002,7 @@
             // gcc_CIncludes_Add_Button
             // 
             this.gcc_CIncludes_Add_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_CIncludes_Add_Button.Location = new System.Drawing.Point(768, 2);
+            this.gcc_CIncludes_Add_Button.Location = new System.Drawing.Point(653, 2);
             this.gcc_CIncludes_Add_Button.Name = "gcc_CIncludes_Add_Button";
             this.gcc_CIncludes_Add_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_CIncludes_Add_Button.TabIndex = 0;
@@ -821,7 +1016,7 @@
             this.tabGCC_Cplusplus_Include.Controls.Add(this.panel12);
             this.tabGCC_Cplusplus_Include.Location = new System.Drawing.Point(4, 22);
             this.tabGCC_Cplusplus_Include.Name = "tabGCC_Cplusplus_Include";
-            this.tabGCC_Cplusplus_Include.Size = new System.Drawing.Size(691, 281);
+            this.tabGCC_Cplusplus_Include.Size = new System.Drawing.Size(630, 306);
             this.tabGCC_Cplusplus_Include.TabIndex = 4;
             this.tabGCC_Cplusplus_Include.Text = "C++ Includes";
             this.tabGCC_Cplusplus_Include.UseVisualStyleBackColor = true;
@@ -833,7 +1028,7 @@
             this.gcc_CppIncludes_ListItem.FormattingEnabled = true;
             this.gcc_CppIncludes_ListItem.Location = new System.Drawing.Point(0, 27);
             this.gcc_CppIncludes_ListItem.Name = "gcc_CppIncludes_ListItem";
-            this.gcc_CppIncludes_ListItem.Size = new System.Drawing.Size(745, 254);
+            this.gcc_CppIncludes_ListItem.Size = new System.Drawing.Size(630, 279);
             this.gcc_CppIncludes_ListItem.TabIndex = 2;
             // 
             // panel12
@@ -843,13 +1038,13 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(745, 27);
+            this.panel12.Size = new System.Drawing.Size(630, 27);
             this.panel12.TabIndex = 1;
             // 
             // gcc_CppIncludes_Remove_Button
             // 
             this.gcc_CppIncludes_Remove_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_CppIncludes_Remove_Button.Location = new System.Drawing.Point(849, 1);
+            this.gcc_CppIncludes_Remove_Button.Location = new System.Drawing.Point(734, 1);
             this.gcc_CppIncludes_Remove_Button.Name = "gcc_CppIncludes_Remove_Button";
             this.gcc_CppIncludes_Remove_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_CppIncludes_Remove_Button.TabIndex = 1;
@@ -860,7 +1055,7 @@
             // gcc_CppIncludes_Add_Button
             // 
             this.gcc_CppIncludes_Add_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_CppIncludes_Add_Button.Location = new System.Drawing.Point(768, 2);
+            this.gcc_CppIncludes_Add_Button.Location = new System.Drawing.Point(653, 2);
             this.gcc_CppIncludes_Add_Button.Name = "gcc_CppIncludes_Add_Button";
             this.gcc_CppIncludes_Add_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_CppIncludes_Add_Button.TabIndex = 0;
@@ -873,15 +1068,15 @@
             this.panel13.Controls.Add(this.gcc_Cancel_Button);
             this.panel13.Controls.Add(this.gcc_SAVE_Button);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(3, 337);
+            this.panel13.Location = new System.Drawing.Point(3, 362);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(699, 24);
+            this.panel13.Size = new System.Drawing.Size(638, 24);
             this.panel13.TabIndex = 14;
             // 
             // gcc_Cancel_Button
             // 
             this.gcc_Cancel_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Cancel_Button.Location = new System.Drawing.Point(623, 1);
+            this.gcc_Cancel_Button.Location = new System.Drawing.Point(562, 1);
             this.gcc_Cancel_Button.Name = "gcc_Cancel_Button";
             this.gcc_Cancel_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_Cancel_Button.TabIndex = 1;
@@ -892,7 +1087,7 @@
             // gcc_SAVE_Button
             // 
             this.gcc_SAVE_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_SAVE_Button.Location = new System.Drawing.Point(545, 1);
+            this.gcc_SAVE_Button.Location = new System.Drawing.Point(484, 1);
             this.gcc_SAVE_Button.Name = "gcc_SAVE_Button";
             this.gcc_SAVE_Button.Size = new System.Drawing.Size(75, 23);
             this.gcc_SAVE_Button.TabIndex = 0;
@@ -903,7 +1098,7 @@
             // gcc_Button_Remove
             // 
             this.gcc_Button_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Button_Remove.Location = new System.Drawing.Point(571, 420);
+            this.gcc_Button_Remove.Location = new System.Drawing.Point(510, 420);
             this.gcc_Button_Remove.Name = "gcc_Button_Remove";
             this.gcc_Button_Remove.Size = new System.Drawing.Size(75, 23);
             this.gcc_Button_Remove.TabIndex = 12;
@@ -913,7 +1108,7 @@
             // gcc_Button_Save
             // 
             this.gcc_Button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Button_Save.Location = new System.Drawing.Point(490, 420);
+            this.gcc_Button_Save.Location = new System.Drawing.Point(429, 420);
             this.gcc_Button_Save.Name = "gcc_Button_Save";
             this.gcc_Button_Save.Size = new System.Drawing.Size(75, 23);
             this.gcc_Button_Save.TabIndex = 10;
@@ -923,7 +1118,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(652, 420);
+            this.button1.Location = new System.Drawing.Point(591, 420);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -939,7 +1134,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(3, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(699, 27);
+            this.panel8.Size = new System.Drawing.Size(638, 27);
             this.panel8.TabIndex = 13;
             // 
             // gcc_Label_Path
@@ -948,7 +1143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gcc_Label_Path.Location = new System.Drawing.Point(213, 4);
             this.gcc_Label_Path.Name = "gcc_Label_Path";
-            this.gcc_Label_Path.Size = new System.Drawing.Size(443, 16);
+            this.gcc_Label_Path.Size = new System.Drawing.Size(382, 16);
             this.gcc_Label_Path.TabIndex = 3;
             this.gcc_Label_Path.Text = "gcc_Label_Path";
             // 
@@ -972,7 +1167,7 @@
             // gcc_Button_SelectPath
             // 
             this.gcc_Button_SelectPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcc_Button_SelectPath.Location = new System.Drawing.Point(663, 1);
+            this.gcc_Button_SelectPath.Location = new System.Drawing.Point(602, 1);
             this.gcc_Button_SelectPath.Name = "gcc_Button_SelectPath";
             this.gcc_Button_SelectPath.Size = new System.Drawing.Size(32, 23);
             this.gcc_Button_SelectPath.TabIndex = 8;
@@ -987,7 +1182,7 @@
             this.tabModule.Location = new System.Drawing.Point(4, 22);
             this.tabModule.Name = "tabModule";
             this.tabModule.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModule.Size = new System.Drawing.Size(705, 364);
+            this.tabModule.Size = new System.Drawing.Size(644, 389);
             this.tabModule.TabIndex = 0;
             this.tabModule.Text = "Module";
             this.tabModule.UseVisualStyleBackColor = true;
@@ -1001,7 +1196,7 @@
             this.tabControl2.Multiline = true;
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(699, 327);
+            this.tabControl2.Size = new System.Drawing.Size(638, 352);
             this.tabControl2.TabIndex = 0;
             // 
             // tabModuleGeneral
@@ -1011,7 +1206,7 @@
             this.tabModuleGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabModuleGeneral.Name = "tabModuleGeneral";
             this.tabModuleGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModuleGeneral.Size = new System.Drawing.Size(691, 301);
+            this.tabModuleGeneral.Size = new System.Drawing.Size(630, 326);
             this.tabModuleGeneral.TabIndex = 0;
             this.tabModuleGeneral.Text = "General";
             this.tabModuleGeneral.UseVisualStyleBackColor = true;
@@ -1023,7 +1218,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 177);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(685, 121);
+            this.panel6.Size = new System.Drawing.Size(624, 146);
             this.panel6.TabIndex = 4;
             // 
             // module_ListCheck_Modules
@@ -1032,7 +1227,7 @@
             this.module_ListCheck_Modules.FormattingEnabled = true;
             this.module_ListCheck_Modules.Location = new System.Drawing.Point(0, 24);
             this.module_ListCheck_Modules.Name = "module_ListCheck_Modules";
-            this.module_ListCheck_Modules.Size = new System.Drawing.Size(685, 97);
+            this.module_ListCheck_Modules.Size = new System.Drawing.Size(624, 122);
             this.module_ListCheck_Modules.TabIndex = 2;
             // 
             // panel7
@@ -1043,7 +1238,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(685, 24);
+            this.panel7.Size = new System.Drawing.Size(624, 24);
             this.panel7.TabIndex = 3;
             // 
             // label13
@@ -1059,7 +1254,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(549, 5);
+            this.label12.Location = new System.Drawing.Point(488, 5);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 1;
@@ -1076,7 +1271,7 @@
             "DLL_DYNAMIC",
             "LIB",
             "FILE_HEADER"});
-            this.module_Type_Select.Location = new System.Drawing.Point(587, 0);
+            this.module_Type_Select.Location = new System.Drawing.Point(526, 0);
             this.module_Type_Select.Name = "module_Type_Select";
             this.module_Type_Select.Size = new System.Drawing.Size(98, 21);
             this.module_Type_Select.TabIndex = 0;
@@ -1088,7 +1283,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(685, 174);
+            this.panel2.Size = new System.Drawing.Size(624, 174);
             this.panel2.TabIndex = 3;
             // 
             // panel4
@@ -1103,7 +1298,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel4.Size = new System.Drawing.Size(426, 174);
+            this.panel4.Size = new System.Drawing.Size(365, 174);
             this.panel4.TabIndex = 6;
             this.panel4.TabStop = false;
             this.panel4.Text = "Settings";
@@ -1112,7 +1307,7 @@
             // 
             this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(304, 19);
+            this.checkBox4.Location = new System.Drawing.Point(243, 19);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(57, 17);
             this.checkBox4.TabIndex = 6;
@@ -1123,7 +1318,7 @@
             // 
             this.module_Item_Status_Checkbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.module_Item_Status_Checkbox.AutoSize = true;
-            this.module_Item_Status_Checkbox.Location = new System.Drawing.Point(365, 19);
+            this.module_Item_Status_Checkbox.Location = new System.Drawing.Point(304, 19);
             this.module_Item_Status_Checkbox.Name = "module_Item_Status_Checkbox";
             this.module_Item_Status_Checkbox.Size = new System.Drawing.Size(53, 17);
             this.module_Item_Status_Checkbox.TabIndex = 5;
@@ -1139,7 +1334,7 @@
             this.module_Item_Setting_Text.Multiline = true;
             this.module_Item_Setting_Text.Name = "module_Item_Setting_Text";
             this.module_Item_Setting_Text.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.module_Item_Setting_Text.Size = new System.Drawing.Size(373, 127);
+            this.module_Item_Setting_Text.Size = new System.Drawing.Size(312, 127);
             this.module_Item_Setting_Text.TabIndex = 4;
             // 
             // label6
@@ -1158,7 +1353,7 @@
             this.module_Item_Name_Text.Location = new System.Drawing.Point(47, 17);
             this.module_Item_Name_Text.Name = "module_Item_Name_Text";
             this.module_Item_Name_Text.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.module_Item_Name_Text.Size = new System.Drawing.Size(253, 20);
+            this.module_Item_Name_Text.Size = new System.Drawing.Size(192, 20);
             this.module_Item_Name_Text.TabIndex = 3;
             // 
             // label7
@@ -1174,7 +1369,7 @@
             // 
             this.groupBox1.Controls.Add(this.module_ListFiles);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Location = new System.Drawing.Point(426, 0);
+            this.groupBox1.Location = new System.Drawing.Point(365, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.groupBox1.Size = new System.Drawing.Size(259, 174);
@@ -1199,7 +1394,7 @@
             this.tabModuleConfig.Location = new System.Drawing.Point(4, 22);
             this.tabModuleConfig.Name = "tabModuleConfig";
             this.tabModuleConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabModuleConfig.Size = new System.Drawing.Size(691, 301);
+            this.tabModuleConfig.Size = new System.Drawing.Size(630, 326);
             this.tabModuleConfig.TabIndex = 1;
             this.tabModuleConfig.Text = "Config";
             this.tabModuleConfig.UseVisualStyleBackColor = true;
@@ -1212,7 +1407,7 @@
             this.module_Config_TextJson.Multiline = true;
             this.module_Config_TextJson.Name = "module_Config_TextJson";
             this.module_Config_TextJson.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.module_Config_TextJson.Size = new System.Drawing.Size(739, 295);
+            this.module_Config_TextJson.Size = new System.Drawing.Size(624, 320);
             this.module_Config_TextJson.TabIndex = 0;
             // 
             // panel1
@@ -1223,15 +1418,15 @@
             this.panel1.Controls.Add(this.module_Button_RemoveModule);
             this.panel1.Controls.Add(this.module_Button_UpdateModule);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 330);
+            this.panel1.Location = new System.Drawing.Point(3, 355);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 31);
+            this.panel1.Size = new System.Drawing.Size(638, 31);
             this.panel1.TabIndex = 1;
             // 
             // module_Button_CloneMakefile
             // 
             this.module_Button_CloneMakefile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.module_Button_CloneMakefile.Location = new System.Drawing.Point(152, 5);
+            this.module_Button_CloneMakefile.Location = new System.Drawing.Point(91, 5);
             this.module_Button_CloneMakefile.Name = "module_Button_CloneMakefile";
             this.module_Button_CloneMakefile.Size = new System.Drawing.Size(99, 23);
             this.module_Button_CloneMakefile.TabIndex = 4;
@@ -1242,7 +1437,7 @@
             // module_Button_CreateNewMakefile
             // 
             this.module_Button_CreateNewMakefile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.module_Button_CreateNewMakefile.Location = new System.Drawing.Point(257, 5);
+            this.module_Button_CreateNewMakefile.Location = new System.Drawing.Point(196, 5);
             this.module_Button_CreateNewMakefile.Name = "module_Button_CreateNewMakefile";
             this.module_Button_CreateNewMakefile.Size = new System.Drawing.Size(123, 23);
             this.module_Button_CreateNewMakefile.TabIndex = 3;
@@ -1253,7 +1448,7 @@
             // module_Button_SelectModule
             // 
             this.module_Button_SelectModule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.module_Button_SelectModule.Location = new System.Drawing.Point(386, 5);
+            this.module_Button_SelectModule.Location = new System.Drawing.Point(325, 5);
             this.module_Button_SelectModule.Name = "module_Button_SelectModule";
             this.module_Button_SelectModule.Size = new System.Drawing.Size(92, 23);
             this.module_Button_SelectModule.TabIndex = 2;
@@ -1264,7 +1459,7 @@
             // module_Button_RemoveModule
             // 
             this.module_Button_RemoveModule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.module_Button_RemoveModule.Location = new System.Drawing.Point(583, 5);
+            this.module_Button_RemoveModule.Location = new System.Drawing.Point(522, 5);
             this.module_Button_RemoveModule.Name = "module_Button_RemoveModule";
             this.module_Button_RemoveModule.Size = new System.Drawing.Size(111, 23);
             this.module_Button_RemoveModule.TabIndex = 1;
@@ -1275,255 +1470,13 @@
             // module_Button_UpdateModule
             // 
             this.module_Button_UpdateModule.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.module_Button_UpdateModule.Location = new System.Drawing.Point(484, 5);
+            this.module_Button_UpdateModule.Location = new System.Drawing.Point(423, 5);
             this.module_Button_UpdateModule.Name = "module_Button_UpdateModule";
             this.module_Button_UpdateModule.Size = new System.Drawing.Size(93, 23);
             this.module_Button_UpdateModule.TabIndex = 0;
             this.module_Button_UpdateModule.Text = "Update Module";
             this.module_Button_UpdateModule.UseVisualStyleBackColor = true;
             this.module_Button_UpdateModule.Click += new System.EventHandler(this.module_Button_UpdateModule_Click);
-            // 
-            // tabProjectOption
-            // 
-            this.tabProjectOption.Controls.Add(this.panel5);
-            this.tabProjectOption.Controls.Add(this.prj_option_ListCheck_Projects);
-            this.tabProjectOption.Controls.Add(this.panel3);
-            this.tabProjectOption.Location = new System.Drawing.Point(4, 22);
-            this.tabProjectOption.Name = "tabProjectOption";
-            this.tabProjectOption.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProjectOption.Size = new System.Drawing.Size(705, 364);
-            this.tabProjectOption.TabIndex = 3;
-            this.tabProjectOption.Text = "Project Option";
-            this.tabProjectOption.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.groupBox4);
-            this.panel5.Controls.Add(this.groupBox2);
-            this.panel5.Controls.Add(this.groupBox3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(699, 218);
-            this.panel5.TabIndex = 9;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.prj_option_FileItem_Name_Text);
-            this.groupBox4.Controls.Add(this.checkBox5);
-            this.groupBox4.Controls.Add(this.checkBox3);
-            this.groupBox4.Controls.Add(this.prj_option_FileItem_Setting_Text);
-            this.groupBox4.Controls.Add(this.label10);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(0, 129);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(440, 89);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "File";
-            // 
-            // prj_option_FileItem_Name_Text
-            // 
-            this.prj_option_FileItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_FileItem_Name_Text.Location = new System.Drawing.Point(47, 17);
-            this.prj_option_FileItem_Name_Text.Name = "prj_option_FileItem_Name_Text";
-            this.prj_option_FileItem_Name_Text.Size = new System.Drawing.Size(278, 20);
-            this.prj_option_FileItem_Name_Text.TabIndex = 3;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(324, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox5.Size = new System.Drawing.Size(57, 17);
-            this.checkBox5.TabIndex = 6;
-            this.checkBox5.Text = "Cache";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(380, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox3.Size = new System.Drawing.Size(53, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Using";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // prj_option_FileItem_Setting_Text
-            // 
-            this.prj_option_FileItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_FileItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
-            this.prj_option_FileItem_Setting_Text.Multiline = true;
-            this.prj_option_FileItem_Setting_Text.Name = "prj_option_FileItem_Setting_Text";
-            this.prj_option_FileItem_Setting_Text.Size = new System.Drawing.Size(387, 42);
-            this.prj_option_FileItem_Setting_Text.TabIndex = 4;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Name";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 13);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Settings";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Setting_Text);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.prj_option_ProjectItem_Name_Text);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(440, 129);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Project";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(378, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox2.Size = new System.Drawing.Size(53, 17);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "Using";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // prj_option_ProjectItem_Setting_Text
-            // 
-            this.prj_option_ProjectItem_Setting_Text.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_ProjectItem_Setting_Text.Location = new System.Drawing.Point(47, 41);
-            this.prj_option_ProjectItem_Setting_Text.Multiline = true;
-            this.prj_option_ProjectItem_Setting_Text.Name = "prj_option_ProjectItem_Setting_Text";
-            this.prj_option_ProjectItem_Setting_Text.Size = new System.Drawing.Size(387, 82);
-            this.prj_option_ProjectItem_Setting_Text.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Name";
-            // 
-            // prj_option_ProjectItem_Name_Text
-            // 
-            this.prj_option_ProjectItem_Name_Text.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_ProjectItem_Name_Text.Location = new System.Drawing.Point(47, 17);
-            this.prj_option_ProjectItem_Name_Text.Name = "prj_option_ProjectItem_Name_Text";
-            this.prj_option_ProjectItem_Name_Text.Size = new System.Drawing.Size(328, 20);
-            this.prj_option_ProjectItem_Name_Text.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Settings";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.prj_option_ListFiles);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Location = new System.Drawing.Point(440, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(259, 218);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Files";
-            // 
-            // prj_option_ListFiles
-            // 
-            this.prj_option_ListFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.prj_option_ListFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.prj_option_ListFiles.FormattingEnabled = true;
-            this.prj_option_ListFiles.Location = new System.Drawing.Point(3, 16);
-            this.prj_option_ListFiles.Name = "prj_option_ListFiles";
-            this.prj_option_ListFiles.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.prj_option_ListFiles.ScrollAlwaysVisible = true;
-            this.prj_option_ListFiles.Size = new System.Drawing.Size(253, 199);
-            this.prj_option_ListFiles.TabIndex = 0;
-            // 
-            // prj_option_ListCheck_Projects
-            // 
-            this.prj_option_ListCheck_Projects.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.prj_option_ListCheck_Projects.FormattingEnabled = true;
-            this.prj_option_ListCheck_Projects.Location = new System.Drawing.Point(3, 221);
-            this.prj_option_ListCheck_Projects.Name = "prj_option_ListCheck_Projects";
-            this.prj_option_ListCheck_Projects.Size = new System.Drawing.Size(699, 109);
-            this.prj_option_ListCheck_Projects.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.prj_option_Button_Select);
-            this.panel3.Controls.Add(this.prj_option_Button_Remove);
-            this.panel3.Controls.Add(this.prj_option_Button_Update);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(3, 330);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(699, 31);
-            this.panel3.TabIndex = 2;
-            // 
-            // prj_option_Button_Select
-            // 
-            this.prj_option_Button_Select.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_Button_Select.Location = new System.Drawing.Point(386, 5);
-            this.prj_option_Button_Select.Name = "prj_option_Button_Select";
-            this.prj_option_Button_Select.Size = new System.Drawing.Size(92, 23);
-            this.prj_option_Button_Select.TabIndex = 2;
-            this.prj_option_Button_Select.Text = "Select";
-            this.prj_option_Button_Select.UseVisualStyleBackColor = true;
-            this.prj_option_Button_Select.Click += new System.EventHandler(this.prj_option_Button_Select_Click);
-            // 
-            // prj_option_Button_Remove
-            // 
-            this.prj_option_Button_Remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_Button_Remove.Location = new System.Drawing.Point(583, 5);
-            this.prj_option_Button_Remove.Name = "prj_option_Button_Remove";
-            this.prj_option_Button_Remove.Size = new System.Drawing.Size(111, 23);
-            this.prj_option_Button_Remove.TabIndex = 1;
-            this.prj_option_Button_Remove.Text = "Remove";
-            this.prj_option_Button_Remove.UseVisualStyleBackColor = true;
-            // 
-            // prj_option_Button_Update
-            // 
-            this.prj_option_Button_Update.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.prj_option_Button_Update.Location = new System.Drawing.Point(484, 5);
-            this.prj_option_Button_Update.Name = "prj_option_Button_Update";
-            this.prj_option_Button_Update.Size = new System.Drawing.Size(93, 23);
-            this.prj_option_Button_Update.TabIndex = 0;
-            this.prj_option_Button_Update.Text = "Update";
-            this.prj_option_Button_Update.UseVisualStyleBackColor = true;
             // 
             // tabMakefile
             // 
@@ -1532,7 +1485,7 @@
             this.tabMakefile.Location = new System.Drawing.Point(4, 22);
             this.tabMakefile.Name = "tabMakefile";
             this.tabMakefile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMakefile.Size = new System.Drawing.Size(705, 364);
+            this.tabMakefile.Size = new System.Drawing.Size(644, 389);
             this.tabMakefile.TabIndex = 5;
             this.tabMakefile.Text = "Makefile";
             this.tabMakefile.UseVisualStyleBackColor = true;
@@ -1545,7 +1498,7 @@
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox3.Size = new System.Drawing.Size(699, 333);
+            this.textBox3.Size = new System.Drawing.Size(638, 358);
             this.textBox3.TabIndex = 1;
             // 
             // toolStrip1
@@ -1557,7 +1510,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStrip1.Size = new System.Drawing.Size(699, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(638, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -1587,7 +1540,7 @@
             this.tabCompileLOG.Location = new System.Drawing.Point(4, 22);
             this.tabCompileLOG.Name = "tabCompileLOG";
             this.tabCompileLOG.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCompileLOG.Size = new System.Drawing.Size(705, 364);
+            this.tabCompileLOG.Size = new System.Drawing.Size(644, 389);
             this.tabCompileLOG.TabIndex = 6;
             this.tabCompileLOG.Text = "Compile Log";
             this.tabCompileLOG.UseVisualStyleBackColor = true;
@@ -1600,7 +1553,7 @@
             this.compile_LOG_TextBox.Multiline = true;
             this.compile_LOG_TextBox.Name = "compile_LOG_TextBox";
             this.compile_LOG_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.compile_LOG_TextBox.Size = new System.Drawing.Size(699, 358);
+            this.compile_LOG_TextBox.Size = new System.Drawing.Size(638, 383);
             this.compile_LOG_TextBox.TabIndex = 0;
             // 
             // statusBar
@@ -1616,81 +1569,8 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // fileBrowser1
-            // 
-            this.fileBrowser1.AllowDrop = true;
-            this.fileBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileBrowser1.ListViewMode = System.Windows.Forms.View.List;
-            this.fileBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.fileBrowser1.MinimumSize = new System.Drawing.Size(300, 200);
-            this.fileBrowser1.Name = "fileBrowser1";
-            this.fileBrowser1.PluginWrapper = this.pluginWrapper;
-            treeNode1.Name = "";
-            treeNode1.Text = "";
-            treeNode2.ImageIndex = 23;
-            treeNode2.Name = "Local Disk (C:)";
-            treeNode2.SelectedImageIndex = 125;
-            treeNode2.Text = "Local Disk (C:)";
-            treeNode3.Name = "";
-            treeNode3.Text = "";
-            treeNode4.ImageIndex = 23;
-            treeNode4.Name = "Data (D:)";
-            treeNode4.SelectedImageIndex = 125;
-            treeNode4.Text = "Data (D:)";
-            treeNode5.Name = "";
-            treeNode5.Text = "";
-            treeNode6.ImageIndex = 25;
-            treeNode6.Name = "DVD Drive (E:)";
-            treeNode6.SelectedImageIndex = 126;
-            treeNode6.Text = "DVD Drive (E:)";
-            treeNode7.Name = "";
-            treeNode7.Text = "";
-            treeNode8.ImageIndex = 27;
-            treeNode8.Name = "CD Drive (F:)";
-            treeNode8.SelectedImageIndex = 127;
-            treeNode8.Text = "CD Drive (F:)";
-            treeNode9.Name = "";
-            treeNode9.Text = "";
-            treeNode10.ImageIndex = 23;
-            treeNode10.Name = "Working (G:)";
-            treeNode10.SelectedImageIndex = 125;
-            treeNode10.Text = "Working (G:)";
-            treeNode11.Name = "";
-            treeNode11.Text = "";
-            treeNode12.ImageIndex = 23;
-            treeNode12.Name = "Run (H:)";
-            treeNode12.SelectedImageIndex = 125;
-            treeNode12.Text = "Run (H:)";
-            treeNode13.Name = "";
-            treeNode13.Text = "";
-            treeNode14.ImageIndex = 23;
-            treeNode14.Name = "Backup (I:)";
-            treeNode14.SelectedImageIndex = 125;
-            treeNode14.Text = "Backup (I:)";
-            treeNode15.Name = "";
-            treeNode15.Text = "";
-            treeNode16.ImageIndex = 17;
-            treeNode16.Name = "Control Panel";
-            treeNode16.SelectedImageIndex = 122;
-            treeNode16.Text = "Control Panel";
-            treeNode17.Name = "";
-            treeNode17.Text = "";
-            treeNode18.ImageIndex = 123;
-            treeNode18.Name = "Shared Documents";
-            treeNode18.SelectedImageIndex = 124;
-            treeNode18.Text = "Shared Documents";
-            treeNode19.ImageIndex = 9;
-            treeNode19.Name = "My Computer";
-            treeNode19.SelectedImageIndex = 118;
-            treeNode19.Text = "My Computer";
-            this.fileBrowser1.SelectedNode = treeNode19;
-            this.fileBrowser1.ShellBrowser = this.shellBrowser;
-            this.fileBrowser1.Size = new System.Drawing.Size(699, 383);
-            this.fileBrowser1.SplitterDistance = 162;
-            this.fileBrowser1.TabIndex = 0;
             // 
             // fApp
             // 
@@ -1709,14 +1589,22 @@
             this.mnMain.ResumeLayout(false);
             this.mnMain.PerformLayout();
             this.tabCategory.ResumeLayout(false);
+            this.tabProject.ResumeLayout(false);
+            this.tabControl3.ResumeLayout(false);
+            this.tabFileBuild.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.tabFileHeader.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
+            this.tabFileCpp.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.tabFileOther.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
             this.tabClass.ResumeLayout(false);
             this.tabClass.PerformLayout();
             this.tabBookMark.ResumeLayout(false);
             this.tabBookMark.PerformLayout();
-            this.tabFile.ResumeLayout(false);
-            this.tabFile.PerformLayout();
             this.tabMain.ResumeLayout(false);
-            this.tabProject.ResumeLayout(false);
+            this.tabExplorer.ResumeLayout(false);
             this.tabDefine.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
@@ -1749,14 +1637,6 @@
             this.tabModuleConfig.ResumeLayout(false);
             this.tabModuleConfig.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.tabProjectOption.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.tabMakefile.ResumeLayout(false);
             this.tabMakefile.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -1787,15 +1667,12 @@
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.TabPage tabBookMark;
-        private System.Windows.Forms.TabPage tabFile;
+        private System.Windows.Forms.TabPage tabProject;
         private System.Windows.Forms.TabPage tabGCC;
-        private System.Windows.Forms.TabPage tabProjectOption;
         private System.Windows.Forms.ToolStrip toolBarClass;
         private System.Windows.Forms.TreeView treeClass;
         private System.Windows.Forms.TreeView treeBookMark;
         private System.Windows.Forms.ToolStrip toolBarBookMark;
-        private System.Windows.Forms.TreeView treeFile;
-        private System.Windows.Forms.ToolStrip toolBarFile;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label gcc_Label_Path;
         private System.Windows.Forms.Label label3;
@@ -1845,34 +1722,13 @@
         private System.Windows.Forms.TextBox module_Config_TextJson;
         private System.Windows.Forms.Button module_Button_CloneMakefile;
         private System.Windows.Forms.Button module_Button_CreateNewMakefile;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button prj_option_Button_Select;
-        private System.Windows.Forms.Button prj_option_Button_Remove;
-        private System.Windows.Forms.Button prj_option_Button_Update;
         private System.Windows.Forms.GroupBox panel4;
-        private System.Windows.Forms.CheckedListBox prj_option_ListCheck_Projects;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ListBox prj_option_ListFiles;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox prj_option_ProjectItem_Setting_Text;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox prj_option_ProjectItem_Name_Text;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.TextBox prj_option_FileItem_Setting_Text;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox prj_option_FileItem_Name_Text;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox module_Type_Select;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ListBox gcc_Binaries_ListItems;
         private System.Windows.Forms.Panel panel9;
@@ -1902,6 +1758,28 @@
         private System.Windows.Forms.Button define_Button_Cancel;
         private System.Windows.Forms.Button define_Button_SAVE;
         private System.Windows.Forms.CheckedListBox define_ListItem;
-        private System.Windows.Forms.TabPage tabProject;
+        private System.Windows.Forms.TabPage tabExplorer;
+        private System.Windows.Forms.ToolStripTextBox project_ItemSelect_PathRootCpp_TextBox;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabPage tabFileBuild;
+        private System.Windows.Forms.TabPage tabFileHeader;
+        private System.Windows.Forms.TabPage tabFileCpp;
+        private System.Windows.Forms.TabPage tabFileOther;
+        private System.Windows.Forms.ToolStripTextBox project_ItemSelect_Name_TextBox;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
+        private System.Windows.Forms.ListBox file_Build_ListItem;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Button build_Button_Compile;
+        private System.Windows.Forms.CheckedListBox file_Header_ListItem;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckedListBox file_Cpp_ListItem;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckedListBox file_Other_ListItem;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button build_AddProject_Button;
     }
 }
